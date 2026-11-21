@@ -153,6 +153,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
 .v3 .grp{position:absolute;left:0;top:0;width:0;height:0;transform-style:preserve-3d}
 .v3 .f.in{background:#5e0a12}
 .v3 .f.st{background:#7a0f1a}
+.v3 .f.lw{background:linear-gradient(to top,#9a2430,#560913 45%,#2a0306)}
+.v3 .f.lc{background:radial-gradient(ellipse at 50% 55%,#3c070d,#1c0204)}
+.v3 .f.rim{background:#e9dcc4;box-shadow:none}
 .v3 .f.kopfb{background:#8a1420;border-radius:10px 10px 0 0}
 .v3 .shadow{position:absolute;left:50%;top:50%;border-radius:50%;background:radial-gradient(ellipse,rgba(0,0,0,.55),transparent 70%);transform-style:preserve-3d}
 .v3hint{text-align:center;color:var(--mut);font-size:14px;margin-top:6px}
@@ -496,7 +499,7 @@ document.querySelectorAll('.pk .tog .chip').forEach(b=>b.onclick=()=>{b.parentNo
 // 3D-Viewer (CSS 3D, ohne Bibliothek)
 (function(){
   const stage=document.getElementById('v3'),obj=document.getElementById('v3obj'),sh=document.getElementById('v3sh');
-  const BOX={e:{B:74,T:36,H:60,K:30,p:'e'},z:{B:378,T:77,H:53,K:0,p:'z'},zo:{B:378,T:152,H:90,K:0,p:'z'}};
+  const BOX={e:{B:74,T:36,H:60,K:30,p:'e'},z:{B:378,T:77,H:53,K:0,p:'z'},zo:{B:378,T:129,H:77,K:0,p:'z'}};
   let cur='e',rx=-18,ry=-32,zoom=1,auto=true,base=4,loaded=false;
   function face(cls,w,h,tf,img,par){const d=document.createElement('div');d.className='f '+cls;d.style.width=w+'px';d.style.height=h+'px';
     d.style.marginLeft=(-w/2)+'px';d.style.marginTop=(-h/2)+'px';d.style.transform=tf;if(img)d.dataset.bg=img;(par||obj).appendChild(d);return d}
@@ -512,10 +515,10 @@ document.querySelectorAll('.pk .tog .chip').forEach(b=>b.onclick=()=>{b.parentNo
       face('kopfb',B,K,`translateY(${K/2-H/2-K/2}px) translateZ(${-T/2+0.3}px) rotateY(180deg)`,null)}
     sh.style.width=(B*1.5)+'px';sh.style.height=(T*1.6+40)+'px';sh.style.marginLeft=(-B*0.75)+'px';
     if(loaded)load();draw()}
-  // 10er geöffnet (21.11.2026): Schale mit Stegeinlage, 10 Noppen-Poller, Deckel hinten angelehnt (72°) – Maße M aus pack/dims.py
+  // 10er geöffnet (21.11.2026): Schale mit Stegeinlage, 10 Noppen-Poller, Klappdeckel mit Scharnier hinten, 90° aufgeklappt – Maße M aus pack/dims.py
   function buildOpen(s){const P=''+'img/pack/3d/',M=v=>v*s,
     B=376,T=75,W=16,SH=14,FB=74,FT=36,LB=378,TD=77,LH=53,L=70,PH=35,D=32,c=Math.cos(72*Math.PI/180),n=Math.sin(72*Math.PI/180),
-    yF=(LH*c+TD*n)/2,dz=37.35,yc=yF-W/2,F=(cls,w,h,tf,img,par)=>face(cls,M(w),M(h),tf,img?P+img+'.webp':null,par),
+    yF=TD/2,dz=26.75,yc=yF-W/2,F=(cls,w,h,tf,img,par)=>face(cls,M(w),M(h),tf,img?P+img+'.webp':null,par),
     t=(x,y,z)=>`translate3d(${M(x)}px,${M(y)}px,${M(z)}px)`;
     // Schale
     F('',B,T,t(0,yF-0.3,dz)+' rotateX(90deg)','zo-floor');F('',B,T,t(0,yF,dz)+' rotateX(-90deg)','z-bottom');
@@ -530,14 +533,17 @@ document.querySelectorAll('.pk .tog .chip').forEach(b=>b.onclick=()=>{b.parentNo
     for(let r=0;r<2;r++)for(let i=0;i<5;i++){const k='zo-p'+((1-r)*5+i)+'-',x=-B/2+1+i*(FB+1)+FB/2,z=dz+T/2-(1+r*(FT+1)+FT/2),y=yF-0.3-PH/2;
       F('',L,PH,t(x,y,z+D/2),k+'front');F('',L,PH,t(x,y,z-D/2)+' rotateY(180deg)',k+'back');F('',L,D,t(x,y-PH/2,z)+' rotateX(90deg)',k+'top');
       F('',D,PH,t(x+L/2,y,z)+' rotateY(90deg)',k+'side');F('',D,PH,t(x-L/2,y,z)+' rotateY(-90deg)',k+'side')}
-    // Deckel als offene Schachtel, Vorderkante lehnt auf der Schalen-Rückwand
-    const g=document.createElement('div');g.className='grp';g.style.transform=t(0,yF-LH*c,dz-T/2-0.5)+' rotateX(-72deg)';obj.appendChild(g);
+    // Klappdeckel: Scharnier an der Unterkante der Deckel-Rückwand (hinten unten an der Schale), 90° nach hinten aufgeklappt
+    const g=document.createElement('div');g.className='grp';g.style.transform=t(0,yF,dz-T/2-0.5)+' rotateX(90deg) '+t(0,-LH,TD);obj.appendChild(g);
     const u=(x,y,z)=>`translate3d(${M(x)}px,${M(y)}px,${M(z)}px)`;
-    F('',LB,TD,u(0,0,-TD/2)+' rotateX(90deg)','z-top',g);F('in',LB,TD,u(0,0.4,-TD/2)+' rotateX(-90deg)',null,g);
-    F('',LB,LH,u(0,LH/2,0),'z-front',g);F('in',LB,LH,u(0,LH/2,-0.4)+' rotateY(180deg)',null,g);
-    F('',LB,LH,u(0,LH/2,-TD)+' rotateY(180deg)','z-back',g);F('in',LB,LH,u(0,LH/2,-TD+0.4),null,g);
-    F('',TD,LH,u(LB/2,LH/2,-TD/2)+' rotateY(90deg)','z-right',g);F('in',TD,LH,u(LB/2-0.4,LH/2,-TD/2)+' rotateY(-90deg)',null,g);
-    F('',TD,LH,u(-LB/2,LH/2,-TD/2)+' rotateY(-90deg)','z-left',g);F('in',TD,LH,u(-LB/2+0.4,LH/2,-TD/2)+' rotateY(90deg)',null,g);
+    F('',LB,TD,u(0,0,-TD/2)+' rotateX(90deg)','z-top',g);F('',LB,TD,u(0,0.4,-TD/2)+' rotateX(-90deg)','zo-lid-in',g);
+    F('',LB,LH,u(0,LH/2,0),'z-front',g);F('lw',LB,LH,u(0,LH/2,-0.4)+' rotateY(180deg)',null,g);
+    F('',LB,LH,u(0,LH/2,-TD)+' rotateY(180deg)','z-back',g);F('lw',LB,LH,u(0,LH/2,-TD+0.4),null,g);
+    F('',TD,LH,u(LB/2,LH/2,-TD/2)+' rotateY(90deg)','z-right',g);F('lw',TD,LH,u(LB/2-0.4,LH/2,-TD/2)+' rotateY(-90deg)',null,g);
+    F('',TD,LH,u(-LB/2,LH/2,-TD/2)+' rotateY(-90deg)','z-left',g);F('lw',TD,LH,u(-LB/2+0.4,LH/2,-TD/2)+' rotateY(90deg)',null,g);
+    // Kartonkante rund um die Deckelöffnung: macht sichtbar, dass der Deckel innen hohl ist
+    const R=1.4;F('rim',LB,R,u(0,LH,-R/2)+' rotateX(-90deg)',null,g);F('rim',LB,R,u(0,LH,-TD+R/2)+' rotateX(-90deg)',null,g);
+    F('rim',R,TD,u(LB/2-R/2,LH,-TD/2)+' rotateX(-90deg)',null,g);F('rim',R,TD,u(-LB/2+R/2,LH,-TD/2)+' rotateX(-90deg)',null,g);
     sh.style.width=M(B*1.5)+'px';sh.style.height=M(T*2.4+40)+'px';sh.style.marginLeft=M(-B*0.75)+'px';
     if(loaded)load();draw()}
   function load(){loaded=true;obj.querySelectorAll('.f[data-bg]').forEach(f=>f.style.backgroundImage=`url(${f.dataset.bg})`)}
@@ -554,10 +560,10 @@ document.querySelectorAll('.pk .tog .chip').forEach(b=>b.onclick=()=>{b.parentNo
   const up=e=>{pts.delete(e.pointerId);pinch=0;last=pts.size===1?[...pts.values()][0]:null};
   stage.addEventListener('pointerup',up);stage.addEventListener('pointercancel',up);
   stage.addEventListener('wheel',e=>{e.preventDefault();auto=false;zoom=Math.min(4,Math.max(.5,zoom*Math.exp(-e.deltaY*0.0015)));draw()},{passive:false});
-  stage.addEventListener('dblclick',()=>{rx=cur==='e'?-18:-30;ry=-32;zoom=1;draw()});
+  stage.addEventListener('dblclick',()=>{rx={e:-18,z:-30,zo:-14}[cur];ry=cur==='zo'?-22:-32;zoom=1;draw()});
   const V={front:[-8,0],back:[-8,180],top:[-88,0],bottom:[88,0],side:[-10,-90]};
   document.querySelectorAll('.v3bar [data-view]').forEach(b=>b.onclick=()=>{auto=false;[rx,ry]=V[b.dataset.view];draw()});
-  document.querySelectorAll('.v3bar [data-box]').forEach(b=>b.onclick=()=>{document.querySelectorAll('.v3bar [data-box]').forEach(c=>c.classList.remove('on'));b.classList.add('on');cur=b.dataset.box;zoom=1;rx=cur==='e'?-18:-30;ry=-32;build()});
+  document.querySelectorAll('.v3bar [data-box]').forEach(b=>b.onclick=()=>{document.querySelectorAll('.v3bar [data-box]').forEach(c=>c.classList.remove('on'));b.classList.add('on');cur=b.dataset.box;zoom=1;rx={e:-18,z:-30,zo:-14}[cur];ry=cur==='zo'?-22:-32;build()});
   addEventListener('resize',build);
   (function spin(){if(auto){ry+=0.12;draw()}requestAnimationFrame(spin)})();
   build();
