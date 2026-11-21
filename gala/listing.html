@@ -195,11 +195,11 @@ table.info td{padding:7px 12px;border-bottom:1px solid #e7e7e7}
 <!-- Markeninhalt -->
 <div class="sec aplus">
   <h2>Produktbeschreibung des Herstellers</h2>
-  <div class="hero"><img src="../img/listing/aplus-kopf.webp" alt="Christbaumpoller am Weihnachtsbaum" style="aspect-ratio:970/600;object-fit:cover"><div class="cap"><h3>Was uns draußen schützt,<br>ist längst Tradition.</h3><p>Jetzt auch für Ihren Baum. Wir schaffen… …dass…</p></div></div>
+  <div class="hero"><img src="img/listing/aplus-kopf.webp" alt="Christbaumpoller am Weihnachtsbaum" style="aspect-ratio:970/600;object-fit:cover"><div class="cap"><h3>Was uns draußen schützt,<br>ist längst Tradition.</h3><p>Jetzt auch für Ihren Baum. Wir schaffen… …dass…</p></div></div>
   <div class="cols">
     <div><img src="img/listing/staplertaschen.webp" alt="Staplertaschen"><h4>Mit echten Staplertaschen</h4><p>Zwei durchgehende Taschen an der Unterseite. Das Detail, an dem jeder den Block sofort erkennt.</p></div>
-    <div><img src="../img/listing/verpackung-einzel.webp" alt="Einzelschachtel"><h4>„Die Einzelmaßnahme“</h4><p>Die Geschenkschachtel mit Kirchenfenster, Kopfkarte und Sichtfenster. Ein Poller, festlich verpackt.</p></div>
-    <div><img src="../img/listing/verpackung-10er.webp" alt="10er-Schachtel geöffnet"><h4>„Sicherheitskonzept für Ihr Wohnzimmer“</h4><p>Zehnteilig, behördlich nicht abgenommen. Zehn Poller in zwei Reihen, die Zufahrtssperre für unter den Baum.</p></div>
+    <div><img src="img/listing/verpackung-einzel.webp" alt="Einzelschachtel"><h4>„Die Einzelmaßnahme“</h4><p>Die Geschenkschachtel mit Kirchenfenster, Kopfkarte und Sichtfenster. Ein Poller, festlich verpackt.</p></div>
+    <div><img src="img/listing/verpackung-10er.webp" alt="10er-Schachtel geöffnet"><h4>„Sicherheitskonzept für Ihr Wohnzimmer“</h4><p>Zehnteilig, behördlich nicht abgenommen. Zehn Poller in zwei Reihen, die Zufahrtssperre für unter den Baum.</p></div>
   </div>
   <div class="cols" style="grid-template-columns:1fr 2fr;align-items:center">
     <div><img src="img/listing/groessen.webp" alt="Größen S M L"></div>
@@ -246,7 +246,7 @@ const prHTML=v=>{const [w,c]=v.toFixed(2).split('.');return `<span class="pr"><s
 const pkName=n=>n===1?'1 Stück (Einzelschachtel)':n+' Stück ('+(n/10)+' × 10er-Schachtel)';
 let gi=0,peek=null;
 const CAP=['Hauptbild','Die drei Größen','Staplertaschen','Am Baum','Einzelschachtel','10er-Schachtel','Gold am Baum','Edel in Silber','Zufahrtssperre vor den Geschenken'];
-function gallery(){return ['img/listing/main-'+st.farbe+'.webp','img/listing/groessen.webp','img/listing/staplertaschen.webp','../img/listing/stimmung-1.webp','../img/listing/verpackung-einzel.webp','../img/listing/verpackung-10er.webp','../img/listing/stimmung-2.webp','../img/listing/stimmung-3.webp','../img/listing/stimmung-4.webp']}
+function gallery(){return ['img/listing/main-'+st.farbe+'.webp','img/listing/groessen.webp','img/listing/staplertaschen.webp','img/listing/stimmung-1.webp','img/listing/verpackung-einzel.webp','img/listing/verpackung-10er.webp','img/listing/stimmung-2.webp','img/listing/stimmung-3.webp','img/listing/stimmung-4.webp']}
 function showBig(){const g=gallery();$('big').src=peek||g[gi];$('big').alt=CAP[gi];$('gcnt').textContent=(gi+1)+' / '+g.length;
   document.querySelectorAll('#thumbs img').forEach((t,i)=>t.classList.toggle('on',i===gi))}
 function go(d){const n=gallery().length;gi=(gi+d+n)%n;peek=null;showBig();if($('lb').classList.contains('open'))lbShow()}
