@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Christbaumpoller Noppenblock · Schriftzug Pinsel – Ein Stück Sicherheitsgefühl für zu Hause · Ebbing Project</title>
+<meta name="description" content="Christbaumpoller: der Weihnachtsbaum-Anhänger in Form des Weihnachtsmarkt-Sperrblocks. Gold, Silber, Rot – glänzend oder matt, mit oder ohne Schnee. #wirschaffen… …dass…">
+<meta property="og:title" content="Christbaumpoller – Ein Stück Sicherheitsgefühl für zu Hause">
+<meta property="og:description" content="Was uns draußen schützt, ist längst Tradition. Jetzt auch für Ihren Baum.">
+<meta property="og:image" content="../img/og.jpg">
+<link rel="icon" href="../img/favicon.png">
+<style>
+@font-face{font-family:"Archivo";src:url(../fonts/archivo-latin-700-normal.woff2) format("woff2");font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:"Archivo";src:url(../fonts/archivo-latin-900-normal.woff2) format("woff2");font-weight:900;font-style:normal;font-display:swap}
+@font-face{font-family:"Source Sans 3";src:url(../fonts/source-sans-3-latin-400-normal.woff2) format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Source Sans 3";src:url(../fonts/source-sans-3-latin-600-normal.woff2) format("woff2");font-weight:600;font-style:normal;font-display:swap}
+@font-face{font-family:"Source Sans 3";src:url(../fonts/source-sans-3-latin-700-normal.woff2) format("woff2");font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:"Lora";src:url(../fonts/lora-latin-400-italic.woff2) format("woff2");font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:"Lora";src:url(../fonts/lora-latin-500-italic.woff2) format("woff2");font-weight:500;font-style:italic;font-display:swap}
+@font-face{font-family:"Caveat Brush";src:url(../fonts/caveat-brush-latin-400-normal.woff2) format("woff2");font-weight:400;font-style:normal;font-display:swap}
+</style>
+<style>
+:root{--bg:#1B1E22;--bg2:#15171a;--card:#24272c;--or:#B08D57;--or2:#d8b77e;--tx:#F7F5F1;--mut:#9FAAB0;--cream:#E8E6E1;--rot:#b81c26;--night:#0d1530}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--tx);font-family:"Source Sans 3","Segoe UI",system-ui,sans-serif;font-size:18px;line-height:1.6}
+img{max-width:100%;display:block}
+a{color:var(--or2)}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:Archivo,"Segoe UI",sans-serif;letter-spacing:-.01em;line-height:1.1}
+.serif{font-family:Lora,Georgia,serif;font-style:italic;font-weight:500}
+.eyebrow{font-family:Archivo,sans-serif;font-weight:700;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--or)}
+/* Kopfzeile */
+header.top{position:fixed;top:0;left:0;right:0;z-index:20;background:rgba(21,23,26,.72);backdrop-filter:blur(10px);border-bottom:1px solid rgba(176,141,87,.18)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--tx);font-family:Archivo;font-weight:700}
+.brand img{width:34px;height:34px;border-radius:4px}
+nav a{color:var(--cream);text-decoration:none;margin-left:22px;font-weight:600;font-size:15px}
+nav a:hover{color:var(--or2)}
+nav .cta{background:var(--or);color:#1B1E22;padding:8px 16px;border-radius:999px}
+nav .tab{border:1px solid var(--or);color:var(--or2);padding:7px 14px;border-radius:8px;margin-left:14px}
+nav .tab:hover{background:var(--or);color:#1B1E22}
+@media(max-width:760px){nav a:not(.cta):not(.tab){display:none}nav .tab{padding:7px 10px;font-size:13px;margin-left:8px}nav .cta{padding:8px 12px;font-size:13px}}
+@media(max-width:480px){header.top .brand{font-size:0;gap:0}nav .cta{margin-left:0}}
+/* Hero */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;
+  background:radial-gradient(ellipse at 70% 40%,rgba(176,141,87,.28),transparent 55%),linear-gradient(180deg,var(--night) 0%,#1c1a2a 55%,var(--bg) 100%)}
+#snow{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding-top:90px;padding-bottom:60px}
+.hero h1{font-size:clamp(44px,7vw,92px);font-weight:900}
+.hero .slogan{font-size:clamp(22px,2.6vw,32px);color:var(--or2);margin:18px 0 26px}
+.hero p.lead{color:var(--cream);max-width:34em}
+.btns{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}
+.btn{display:inline-block;padding:14px 26px;border-radius:999px;font-weight:700;text-decoration:none;font-size:17px;border:0;cursor:pointer;font-family:inherit}
+.btn.gold{background:linear-gradient(135deg,#e3c47e,#B08D57);color:#1B1E22;box-shadow:0 8px 30px rgba(176,141,87,.35)}
+.btn.line{border:1.5px solid var(--or);color:var(--or2);background:transparent}
+.btn:hover{transform:translateY(-1px)}
+.mobile{position:relative;height:520px}
+.hang{position:absolute;top:-60px;transform-origin:50% 0;animation:swing 4.2s ease-in-out infinite}
+.hang::before{content:"";position:absolute;left:50%;top:0;width:2px;height:var(--l,120px);background:#d7be8c;transform:translateX(-1px)}
+.hang img{margin-top:var(--l,120px);width:var(--w,230px);filter:drop-shadow(0 18px 24px rgba(0,0,0,.45))}
+@keyframes swing{0%,100%{transform:rotate(-5deg)}50%{transform:rotate(5deg)}}
+@media(max-width:860px){.hero .wrap{grid-template-columns:1fr}.mobile{height:330px;order:-1}.mobile .hang img{width:calc(var(--w) * .62)}.mobile .hang{--l:90px!important}}
+/* Abschnitte */
+section{padding:110px 0}
+section.alt{background:var(--bg2)}
+.center{text-align:center}
+h2{font-size:clamp(32px,4.4vw,54px);margin:10px 0 18px}
+.intro{max-width:44em;margin:0 auto;color:var(--cream)}
+.story{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:56px}
+.story div{background:var(--card);padding:30px;border-radius:14px;border:1px solid rgba(176,141,87,.15)}
+.story h3{font-size:22px;margin-bottom:10px;color:var(--or2)}
+.story p{color:var(--cream);font-size:17px}
+@media(max-width:860px){.story{grid-template-columns:1fr}}
+.films{display:grid;grid-template-columns:2.2fr 1fr;gap:24px;margin-top:50px;align-items:start}
+.films video{width:100%;border-radius:14px;background:#000;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.films small{display:block;color:var(--mut);margin-top:8px;font-size:14px}
+@media(max-width:860px){.films{grid-template-columns:1fr}}
+/* Konfigurator */
+.konf{display:grid;grid-template-columns:1fr 1fr;gap:50px;margin-top:50px;align-items:center}
+.stage{position:relative;background:radial-gradient(circle at 50% 45%,rgba(176,141,87,.25),transparent 65%),var(--card);border-radius:20px;height:520px;overflow:hidden;border:1px solid rgba(176,141,87,.2)}
+.stage .hang{left:50%;margin-left:calc(var(--w) / -2);top:-40px}
+.opts h3{font-size:15px;letter-spacing:.14em;text-transform:uppercase;color:var(--mut);margin:24px 0 10px;font-family:Archivo}
+.chips{display:flex;gap:10px;flex-wrap:wrap}
+.chip{padding:10px 18px;border-radius:999px;border:1.5px solid #3a3e45;background:transparent;color:var(--tx);font:600 16px "Source Sans 3",sans-serif;cursor:pointer;display:flex;align-items:center;gap:8px}
+.chip .dot{width:16px;height:16px;border-radius:50%}
+.chip.on{border-color:var(--or);background:rgba(176,141,87,.15);color:var(--or2)}
+.price{font-family:Archivo;font-weight:900;font-size:44px;margin-top:28px}
+.price small{font:500 15px "Source Sans 3";color:var(--mut);display:block}
+.vname{font-size:22px;color:var(--or2)}
+@media(max-width:860px){.konf{grid-template-columns:1fr}.stage{height:420px}}
+/* Kollektion Raster */
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:46px}
+.tile{background:var(--card);border-radius:14px;padding:18px 14px 16px;text-align:center;cursor:pointer;border:1px solid transparent;transition:.2s}
+.tile:hover{border-color:var(--or);transform:translateY(-3px)}
+.tile img{height:150px;object-fit:contain;margin:0 auto 10px}
+.tile b{display:block;font-size:16px}
+.tile span{color:var(--mut);font-size:14px}
+@media(max-width:860px){.grid{grid-template-columns:repeat(2,1fr)}}
+/* Größen + Sets */
+.sizes{display:grid;grid-template-columns:.9fr 1.3fr;gap:36px;align-items:end;margin-top:40px}.sizes td,.sizes th{white-space:nowrap;padding:12px 7px}
+table{width:100%;border-collapse:collapse;font-size:17px}
+td,th{padding:12px 8px;border-bottom:1px solid #33373d;text-align:left}
+th{color:var(--mut);font-weight:600;font-size:14px;text-transform:uppercase;letter-spacing:.1em}
+@media(max-width:860px){.sizes{grid-template-columns:minmax(0,1fr)}.sizes img{max-width:100%}.sizes table{display:block;overflow-x:auto;max-width:100%}}
+.sets{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:46px}.sets.four{grid-template-columns:repeat(4,1fr)}.set{display:flex;flex-direction:column}.set .btn{margin-top:auto}
+.set{background:linear-gradient(180deg,#2a2d33,#202328);border-radius:16px;padding:30px;border:1px solid rgba(176,141,87,.25)}
+.set h3{font-size:24px;margin-bottom:6px}
+.set .p{font-family:Archivo;font-weight:900;font-size:30px;color:var(--or2);margin:14px 0}
+.set p{color:var(--cream);font-size:16px}
+.set .row{display:flex;justify-content:center;gap:4px;margin-bottom:16px;height:90px;align-items:flex-end}
+.set .row img{height:70px}.sets.four .row img{height:54px}.packsel{display:flex;gap:28px;align-items:center;justify-content:center;margin-top:34px;flex-wrap:wrap}.packsel img{width:180px}.packsel .chips{margin:8px 0}.packfor{margin-top:22px;color:var(--or2);font-weight:700;font-size:18px}
+@media(max-width:860px){.sets,.sets.four{grid-template-columns:1fr}}
+.quote{font-size:clamp(26px,3.4vw,40px);max-width:24em;margin:0 auto;color:var(--cream)}
+.quote b{color:var(--or2);font-weight:500}
+.script{font-family:"Caveat Brush",cursive;color:var(--rot);font-size:1.15em}
+/* FAQ */
+details{background:var(--card);border-radius:12px;padding:18px 22px;margin:12px 0;border:1px solid #2f3339}
+summary{cursor:pointer;font-weight:700;font-size:18px}
+details p{margin-top:10px;color:var(--cream)}
+/* Bestellung */
+form{display:grid;gap:14px;max-width:560px;margin:34px auto 0;text-align:left}
+input,textarea{width:100%;padding:13px 15px;border-radius:10px;border:1px solid #3a3e45;background:#121417;color:var(--tx);font:16px "Source Sans 3",sans-serif}
+#wunsch{background:#121417;border:1px dashed var(--or);border-radius:10px;padding:14px;color:var(--cream);min-height:56px;font-size:16px}
+footer{padding:50px 0 70px;border-top:1px solid #2a2d33;color:var(--mut);font-size:15px}
+footer .wrap{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(120px);background:var(--or);color:#1B1E22;padding:12px 22px;border-radius:999px;font-weight:700;transition:.3s;z-index:30}
+.toast.show{transform:translateX(-50%) translateY(0)}
+
+/* Verpackung */
+.packs{display:grid;grid-template-columns:1fr 1.25fr;gap:26px;margin-top:50px}
+.pk{background:linear-gradient(180deg,#2a2d33,#202328);border-radius:18px;border:1px solid rgba(176,141,87,.25);overflow:hidden;display:flex;flex-direction:column}
+.pk .pkimg{position:relative;height:clamp(260px,30vw,370px);background:#140e0c}
+.pk .pkimg img{width:100%;height:100%;object-fit:cover;object-position:center 30%}
+.pk .tx{padding:24px 26px 28px}
+.pk h3{font-size:24px;margin-bottom:4px}
+.pk .sub{color:var(--or2);font-family:Lora,serif;font-style:italic;margin-bottom:12px}
+.pk p{color:var(--cream);font-size:16px}
+.pk ul{margin:12px 0 0 18px;color:var(--cream);font-size:15px}
+.pk .tog{display:flex;gap:8px;position:absolute;left:18px;bottom:14px;z-index:2}
+.pk .tog .chip{background:rgba(21,23,26,.85);padding:7px 14px;font-size:14px}
+.pk .tog .chip.on{background:rgba(176,141,87,.35)}
+@media(max-width:860px){.packs{grid-template-columns:1fr}.pk .pkimg{height:auto}.pk .pkimg img{height:auto;aspect-ratio:16/11}}
+.v3wrap{margin-top:46px;background:radial-gradient(ellipse at 50% 40%,rgba(176,141,87,.22),transparent 60%),#121417;border-radius:20px;border:1px solid rgba(176,141,87,.22);padding:18px 18px 22px}
+.v3bar{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;align-items:center}
+.v3bar .sep{width:1px;height:26px;background:#3a3e45;margin:0 6px}
+.v3bar .chip{padding:8px 14px;font-size:14px}
+.v3{position:relative;height:520px;perspective:1600px;cursor:grab;touch-action:none;user-select:none;-webkit-user-select:none;overflow:hidden}
+.v3:active{cursor:grabbing}
+.v3 .obj{position:absolute;left:50%;top:52%;width:0;height:0;transform-style:preserve-3d}
+.v3 .f{position:absolute;backface-visibility:hidden;-webkit-backface-visibility:hidden;background:#7d1019 center/100% 100% no-repeat;box-shadow:inset 0 0 0 1px rgba(0,0,0,.25)}
+.v3 .f.kopf{background-color:transparent;box-shadow:none}
+.v3 .f.kopfb{background:#8a1420;border-radius:10px 10px 0 0}
+.v3 .shadow{position:absolute;left:50%;top:50%;border-radius:50%;background:radial-gradient(ellipse,rgba(0,0,0,.55),transparent 70%);transform-style:preserve-3d}
+.v3hint{text-align:center;color:var(--mut);font-size:14px;margin-top:6px}
+@media(max-width:860px){.v3{height:400px}}
+
+/* Musik-Knopf */
+.mus{position:fixed;left:18px;bottom:18px;z-index:25;display:flex;align-items:center;gap:10px;background:rgba(21,23,26,.86);backdrop-filter:blur(8px);border:1px solid rgba(176,141,87,.45);color:var(--or2);border-radius:999px;padding:9px 16px 9px 12px;font:600 14px "Source Sans 3",sans-serif;cursor:pointer}
+.mus .ic{width:22px;height:22px;display:grid;place-items:center;font-size:17px}
+.mus.on .ic{animation:mus 1.6s ease-in-out infinite}
+@keyframes mus{0%,100%{transform:rotate(-8deg)}50%{transform:rotate(8deg)}}
+/* Am Baum – Stimmungsbilder */
+#ambaum{background:radial-gradient(ellipse at 50% 0%,rgba(176,141,87,.14),transparent 60%),#121418}
+.mood{display:grid;grid-template-columns:1.25fr 1fr 1fr;grid-template-rows:auto auto;gap:16px;margin-top:50px}
+.mood figure{position:relative;overflow:hidden;border-radius:14px;cursor:zoom-in;background:#111;border:1px solid rgba(176,141,87,.18)}
+.mood figure.big{grid-row:span 2}
+.mood img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.mood figure:hover img{transform:scale(1.04)}
+.mood figcaption{position:absolute;left:0;right:0;bottom:0;padding:26px 16px 12px;background:linear-gradient(transparent,rgba(0,0,0,.72));font-size:15px;color:var(--cream)}
+.mood figcaption b{color:var(--or2);font-weight:600}
+#stapeln{background:#16181d}
+.stap{display:grid;grid-template-columns:1.1fr 1fr;grid-template-rows:auto auto;gap:16px;margin-top:50px}
+.stap figure{position:relative;overflow:hidden;border-radius:14px;background:#f5f0e8;border:1px solid rgba(176,141,87,.18);margin:0}
+.stap figure.big{grid-row:span 2}
+.stap img{width:100%;height:100%;object-fit:cover;display:block}
+.stap figcaption{position:absolute;left:0;right:0;bottom:0;padding:26px 16px 12px;background:linear-gradient(transparent,rgba(0,0,0,.66));font-size:15px;color:var(--cream)}
+.stap figcaption b{color:var(--or2);font-weight:600}
+@media(max-width:860px){.stap{grid-template-columns:1fr}.stap figure.big{grid-row:auto}}
+.moodnote{color:var(--mut);font-size:14px;margin-top:16px;text-align:center}
+@media(max-width:860px){.mood{grid-template-columns:1fr 1fr}.mood figure.big{grid-column:span 2;grid-row:auto}}
+.mlb{position:fixed;inset:0;background:rgba(8,9,11,.94);z-index:60;display:none;align-items:center;justify-content:center}
+.mlb.open{display:flex}
+.mlb img{max-width:92vw;max-height:84vh;border-radius:10px;box-shadow:0 20px 80px rgba(0,0,0,.6)}
+.mlb p{position:absolute;bottom:18px;left:0;right:0;text-align:center;color:var(--cream);font-size:16px}
+.mlb button{position:absolute;background:rgba(255,255,255,.08);border:1px solid rgba(176,141,87,.4);color:var(--or2);font-size:30px;width:52px;height:52px;border-radius:50%;cursor:pointer}
+.mlb .x{top:18px;right:18px;font-size:22px}.mlb .l{left:18px;top:50%}.mlb .r{right:18px;top:50%}
+</style>
+</head>
+<body><div style="font:600 14px/1.4 'Source Sans 3',sans-serif;text-align:center;padding:8px 12px;background:#1b1e22;color:#f3ead6">Vorschau Schriftzug Pinsel · <a style="color:#e8c66a" href="../">Original</a> · <a style="color:#e8c66a" href="../pinsel/">Pinsel …dass…</a> · <a style="color:#e8c66a" href="../gala/">Gala</a></div>
+
+<header class="top"><div class="wrap">
+  <a class="brand" href="#"><img src="../img/ep.png" alt="Ebbing Project">Christbaumpoller</a>
+  <nav><a href="#geschichte">Geschichte</a><a href="#ambaum">Am Baum</a><a href="#stapeln">Stapeln</a><a href="#film">Film</a><a href="#kollektion">Kollektion</a><a href="#sets">Sets</a><a href="#verpackung">Verpackung</a><a href="#fragen">Fragen</a><a class="cta" href="#wunschzettel">Wunschzettel</a><a class="tab" href="listing.html" title="Vorschau der Marktplatz-Produktseite">Amazon Preview</a></nav>
+</div></header>
+
+<section class="hero">
+  <canvas id="snow"></canvas>
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">Neu in diesem Advent · Ebbing Project</div>
+      <h1>Christbaum&shy;poller</h1>
+      <div class="slogan serif">Ein Stück Sicherheitsgefühl für zu Hause.</div>
+      <p class="lead">Jedes Jahr stehen sie wieder da, an jeder Zufahrt, liebevoll bemalt, manchmal sogar mit Schleife. Sie gehören zum Weihnachtsmarkt wie Glühwein und gebrannte Mandeln. Höchste Zeit, dass sie auch bei uns zu Hause ankommen, und zwar dort, wo Tradition hingehört: an den Baum.</p>
+      <div class="btns"><a class="btn gold" href="#kollektion">Kollektion ansehen</a><a class="btn line" href="#film">Film ansehen</a></div>
+    </div>
+    <div class="mobile">
+      <div class="hang" style="left:2%;--l:150px;--w:190px;animation-delay:-1.1s"><img src="img/rot-glanz.webp" alt="Christbaumpoller Rot glänzend"></div>
+      <div class="hang" style="left:34%;--l:250px;--w:220px;animation-delay:-2.3s"><img src="img/gold-glanz-schnee.webp" alt="Christbaumpoller Gold glänzend mit Schnee"></div>
+      <div class="hang" style="left:66%;--l:120px;--w:180px;animation-delay:-.4s"><img src="img/silber-glanz.webp" alt="Christbaumpoller Silber glänzend"></div>
+    </div>
+  </div>
+</section>
+
+<section id="geschichte">
+  <div class="wrap center">
+    <div class="eyebrow">Alle Jahre wieder</div>
+    <h2>Was uns draußen schützt,<br>ist längst Tradition.</h2>
+    <p class="intro">Früher hing an deutschen Bäumen Glas aus Lauscha, Stroh aus dem Erzgebirge, Lametta von Oma. Dann kamen die Sperrblöcke auf die Weihnachtsmärkte. Erst grau, dann gelb, dann rot, irgendwann mit Schleife. Kaum etwas hat die Adventszeit der letzten Jahre so geprägt. Wir finden: Was so lange dabei ist, verdient einen Platz am Baum.</p>
+    <div class="story">
+      <div><h3>Original-Form</h3><p>Nachgebildet nach den Noppenblöcken vom Weihnachtsmarkt: oben 2 × 4 quadratische Noppen, unten die passenden Mulden und natürlich die beiden Staplertaschen. Ohne die geht es nicht. Und ja: Man kann sie stapeln.</p></div>
+      <div><h3>Handbeschriftet</h3><p>Jeder Christbaumpoller trägt den Pinselschriftzug <span class="script">#wirschaffen… …dass…</span>. Ein Satz, der sich über die Jahre ins Gedächtnis gestellt hat wie die Blöcke an die Zufahrt.</p></div>
+      <div><h3>Leicht genug</h3><p>Viel leichter als das Original, damit kein Zweig durchhängt, und trotzdem satt in der Hand. Mit Messingöse und Goldfaden, bereit für den Baum. Auf Wunsch frisch eingeschneit.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="ambaum">
+  <div class="wrap">
+    <div class="center">
+      <div class="eyebrow">Am Baum</div>
+      <h2>Zwischen Kugeln und Strohsternen.</h2>
+      <p class="intro">Da hängt er. Zwischen den Kugeln von Oma und den Strohsternen vom Basar, als wär er schon immer dabei gewesen. Erst schaut keiner hin. Und dann redet den ganzen Abend jeder drüber.</p>
+    </div>
+    <div class="mood" id="mood">
+      <figure class="big" data-i="0"><img loading="lazy" src="../img/stimmung/s1.webp" alt="Christbaumpoller Gold glänzend am Zweig zwischen roten Kugeln"><figcaption><b>Gold glänzend · M</b> zwischen Kugel und Zapfen</figcaption></figure>
+      <figure data-i="1"><img loading="lazy" src="../img/stimmung/s2.webp" alt="Christbaumpoller in Gold, Silber und Rot am goldenen Baum"><figcaption><b>Gold, Silber, Rot</b> am goldenen Baum</figcaption></figure>
+      <figure data-i="2"><img loading="lazy" src="../img/stimmung/s3.webp" alt="Christbaumpoller Silber und Gold am dunklen Baum"><figcaption><b>Silber glänzend · Gold matt</b> edel am Kamin</figcaption></figure>
+      <figure data-i="3"><img loading="lazy" src="../img/stimmung/s4.webp" alt="Christbaumpoller als Absperrung vor den Geschenken"><figcaption><b>Die Zufahrtssperre</b> vor den Geschenken</figcaption></figure>
+      <figure data-i="4"><img loading="lazy" src="../img/stimmung/s5.webp" alt="Christbaumpoller Silber mit Schnee am grünen Zweig"><figcaption><b>Silber · frisch eingeschneit</b></figcaption></figure>
+    </div>
+    <p class="moodnote">Bildmontagen: Christbaumpoller maßstabsgetreu aus dem 3D-Modell in Fotos eingesetzt. Fotos echter Muster folgen.</p>
+  </div>
+</section>
+<div class="mlb" id="mlb"><button class="x" id="mlbx" aria-label="schließen">✕</button><button class="l" id="mlbl" aria-label="vorheriges Bild">‹</button><img id="mlbi" alt=""><button class="r" id="mlbr" aria-label="nächstes Bild">›</button><p id="mlbp"></p></div>
+
+<section id="stapeln">
+  <div class="wrap">
+    <div class="center">
+      <div class="eyebrow">Stapelbar</div>
+      <h2>Einer auf den anderen.<br>Wie draußen an der Zufahrt.</h2>
+      <p class="intro">Oben Noppen, unten die passenden Mulden. Band ab, aufsetzen, steht. Klemmt nicht, rutscht aber auch nicht weg. Und wer genug davon hat, baut sich den Baum gleich ganz aus Pollern.</p>
+    </div>
+    <div class="stap">
+      <figure class="big"><img loading="lazy" src="../img/stapel/tanne.webp" alt="Weihnachtsbaum aus 68 gestapelten Christbaumpollern"><figcaption><b>Der Pollerbaum</b> · 68 Steine, zwei als Stamm</figcaption></figure>
+      <figure><img loading="lazy" src="../img/stapel/pyramide.webp" alt="Pyramide aus zehn gestapelten Christbaumpollern"><figcaption><b>Die Pyramide</b> · 4-3-2-1</figcaption></figure>
+      <figure><img loading="lazy" src="../img/stapel/unten.webp" alt="Christbaumpoller von unten mit Mulden und Ösenloch, daneben zwei gestapelt"><figcaption><b>Von unten</b> · 8 Mulden, Ösenloch, Staplertaschen</figcaption></figure>
+    </div>
+    <p class="moodnote">3D-Renderings aus dem Modell. Fotos echter Muster folgen.</p>
+  </div>
+</section>
+
+<section id="film" class="alt">
+  <div class="wrap center">
+    <div class="eyebrow">Der Film</div>
+    <h2>Stille Nacht. Sichere Nacht.</h2>
+    <p class="intro">Mach den Ton an, dann läuft „Stille Nacht“ als Spieluhr.</p>
+    <div class="films">
+      <div><video src="../clips/christbaumpoller-quer.mp4" poster="../img/poster-quer.jpg" controls playsinline preload="metadata"></video><small>Spot · Querformat · 23 Sekunden</small></div>
+      <div><video src="../clips/christbaumpoller-hoch.mp4" poster="../img/poster-hoch.jpg" controls playsinline preload="metadata"></video><small>Für Reels, Shorts und Status · Hochformat</small></div>
+    </div>
+  </div>
+</section>
+
+<section id="kollektion">
+  <div class="wrap">
+    <div class="center">
+      <div class="eyebrow">Die Kollektion</div>
+      <h2>Stellen Sie Ihren Poller zusammen.</h2>
+      <p class="intro">Drei Farben, zwei Oberflächen, mit oder ohne Schnee, in drei Größen. Macht 36 Möglichkeiten, Weihnachten ein bisschen sicherer zu machen. Einzeln 3,99 € (S), 4,99 € (M) und 5,99 € (L). Im 10er-, 20er- und 30er-Pack wird es deutlich günstiger – in jeder Farbe und Variante.</p>
+    </div>
+    <div class="konf">
+      <div class="stage"><div class="hang" id="stageHang" style="--l:170px;--w:340px"><img id="stageImg" src="img/gold-glanz.webp" alt=""></div></div>
+      <div class="opts">
+        <div class="vname" id="vname">Gold glänzend · M</div>
+        <h3>Farbe</h3>
+        <div class="chips" data-k="farbe">
+          <button class="chip on" data-v="gold"><span class="dot" style="background:linear-gradient(135deg,#f1d48e,#b8913f)"></span>Gold</button>
+          <button class="chip" data-v="silber"><span class="dot" style="background:linear-gradient(135deg,#f0f2f5,#9ea3ab)"></span>Silber</button>
+          <button class="chip" data-v="rot"><span class="dot" style="background:linear-gradient(135deg,#e04450,#8e121b)"></span>Rot</button>
+        </div>
+        <h3>Oberfläche</h3>
+        <div class="chips" data-k="oberflaeche"><button class="chip on" data-v="glanz">Glänzend</button><button class="chip" data-v="matt">Matt</button></div>
+        <h3>Schnee</h3>
+        <div class="chips" data-k="schnee"><button class="chip on" data-v="">Ohne</button><button class="chip" data-v="-schnee">Frisch eingeschneit</button></div>
+        <h3>Größe</h3>
+        <div class="chips" data-k="groesse"><button class="chip on" data-v="S">S · 5 cm</button><button class="chip" data-v="M">M · 7 cm</button><button class="chip" data-v="L">L · 9 cm</button></div>
+        <h3>Menge</h3>
+        <div class="chips" style="align-items:center"><button class="chip" type="button" id="minus">−</button><input id="qty" type="number" min="1" value="1" style="width:90px;text-align:center"><button class="chip" type="button" id="plus">+</button>
+          <button class="chip" type="button" data-q="10">10</button><button class="chip" type="button" data-q="20">20</button><button class="chip" type="button" data-q="30">30</button><button class="chip" type="button" data-q="100">100</button></div>
+        <div class="price" id="price">3,99 €<small id="pinfo">Stückpreis 3,99 € · inkl. MwSt., zzgl. Versand · Vorbestellung</small></div>
+        <div class="btns"><button class="btn gold" id="addBtn">Auf den Wunschzettel</button></div>
+      </div>
+    </div>
+    <div class="grid" id="grid"></div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="center"><div class="eyebrow">Größen</div><h2>Für jeden Ast der richtige Poller.</h2></div>
+    <div class="sizes">
+      <img src="../img/groessen.webp" alt="Christbaumpoller in S, M und L">
+      <table>
+        <tr><th>Größe</th><th>Länge</th><th>einzeln</th><th>10er</th><th>20er</th><th>30er</th></tr>
+        <tr><td><b>S</b> · Zweigspitzen</td><td>5 cm</td><td>3,99 €</td><td>24,99 €</td><td>39,99 €</td><td>49,99 €</td></tr>
+        <tr><td><b>M</b> · der Klassiker</td><td>7 cm</td><td>4,99 €</td><td>28,99 €</td><td>46,99 €</td><td>57,99 €</td></tr>
+        <tr><td><b>L</b> · Mitte vom Baum</td><td>9 cm</td><td>5,99 €</td><td>32,99 €</td><td>53,99 €</td><td>66,99 €</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="sets">
+  <div class="wrap">
+    <div class="center"><div class="eyebrow">Packs &amp; Mengenrabatt</div><h2>Mehr Sicherheit. Weniger pro Stück.</h2>
+    <p class="intro">Größe, Farbe und Variante wählen – die Preise unten passen sich an. Alle Poller eines Packs sind gleich. Einzeln kommt der Poller in der Einzelschachtel, ab 10 Stück in der <a href="#verpackung">10er-Schachtel</a>: 20 Stück sind zwei, 30 Stück drei und 100 Stück zehn 10er-Schachteln.</p></div>
+    <div class="packsel">
+      <img id="packImg" src="img/gold-glanz.webp" alt="">
+      <div>
+        <div class="chips" data-k="groesse"><button class="chip on" data-v="S">S · 5 cm</button><button class="chip" data-v="M">M · 7 cm</button><button class="chip" data-v="L">L · 9 cm</button></div>
+        <div class="chips" data-k="farbe"><button class="chip on" data-v="gold"><span class="dot" style="background:linear-gradient(135deg,#f1d48e,#b8913f)"></span>Gold</button><button class="chip" data-v="silber"><span class="dot" style="background:linear-gradient(135deg,#f0f2f5,#9ea3ab)"></span>Silber</button><button class="chip" data-v="rot"><span class="dot" style="background:linear-gradient(135deg,#e04450,#8e121b)"></span>Rot</button></div>
+        <div class="chips" data-k="oberflaeche"><button class="chip on" data-v="glanz">Glänzend</button><button class="chip" data-v="matt">Matt</button></div>
+        <div class="chips" data-k="schnee"><button class="chip on" data-v="">Ohne Schnee</button><button class="chip" data-v="-schnee">Mit Schnee</button></div>
+      </div>
+    </div>
+    <div class="center packfor" id="packFor">Preise für Größe S · Gold glänzend</div>
+    <div class="sets four">
+      <div class="set"><h3>Einzeln</h3><p>Für den ersten Versuch am eigenen Baum. In der Einzelschachtel.</p><div class="p" id="pp1">3,99 €</div><p id="pi1">pro Stück</p><button class="btn line set-add" data-n="1">Einzeln auf den Wunschzettel</button></div>
+      <div class="set"><h3>Kleine Absperrung</h3><p>10 Stück · eine 10er-Schachtel</p><div class="p" id="pp10">24,99 €</div><p id="pi10"></p><button class="btn gold set-add" data-n="10">10er-Pack auf den Wunschzettel</button></div>
+      <div class="set"><h3>Weihnachtsmarkt-Zufahrt</h3><p>20 Stück · zwei 10er-Schachteln</p><div class="p" id="pp20">39,99 €</div><p id="pi20"></p><button class="btn gold set-add" data-n="20">20er-Pack auf den Wunschzettel</button></div>
+      <div class="set"><h3>Komplette Zufahrtssicherung</h3><p>30 Stück · drei 10er-Schachteln</p><div class="p" id="pp30">49,99 €</div><p id="pi30"></p><button class="btn gold set-add" data-n="30">30er-Pack auf den Wunschzettel</button></div>
+    </div>
+    <div class="set" style="margin-top:24px;text-align:center"><h3>Ab 100 Stück: Ihre persönliche Gravur oder Ihr eigener Schriftzug inklusive</h3><p>Für Firmen, Vereine, Weihnachtsfeiern und Stadtverwaltungen mit Humor. Ab 100 Stück bekommt ein Poller Ihre persönliche Gravur oder Ihren eigenen Schriftzug, zum Beispiel Ihren Namen, Ihre Stadt oder Ihren eigenen Hashtag. Im Preis enthalten.</p>
+      <div class="p" id="pp100">100 Stück: 149,99 €</div><p>S 149,99 € · M 174,99 € · L 199,99 € – persönliche Gravur oder Schriftzug inklusive · geliefert in zehn 10er-Schachteln</p><button class="btn gold set-add" data-n="100" style="align-self:center">100 Stück auf den Wunschzettel</button></div>
+  </div>
+</section>
+
+
+<section id="verpackung" class="alt">
+  <div class="wrap">
+    <div class="center"><div class="eyebrow">Verpackung</div><h2>Festlich verpackt.<br>Behördlich nicht abgenommen.</h2>
+    <p class="intro">Rot, Gold, Schleife, Glitzer – wie jedes ordentliche Weihnachtsgeschenk im Regal. Erst beim zweiten Hinsehen merkt man, was draufsteht. Es gibt genau zwei Verpackungen: die Einzelschachtel und die 10er-Schachtel. Wer 20, 30 oder 100 Stück bestellt, bekommt zwei, drei oder zehn 10er-Schachteln.</p></div>
+    <div class="packs">
+      <div class="pk">
+        <div class="pkimg"><img loading="lazy" src="../img/pack/einzel.webp" alt="Einzelschachtel Die Einzelmaßnahme mit Kirchenfenster"></div>
+        <div class="tx"><h3>Die Einzelmaßnahme</h3><div class="sub">„Fürchtet euch nicht.“ – Lukas 2,10</div>
+          <p>Der Poller steht hinter einem goldenen Kirchenfenster, im Strahlenkranz, wie es sich für eine Reliquie gehört. Oben die Kopfkarte zum Aufhängen im Regal.</p>
+          <ul><li>Siegel: geprüft nach Gefühl</li><li>Oben: „Hier öffnen. Ohne Genehmigung.“</li><li>Hinten: Gebrauchsinformation – mindestens haltbar bis Ende der Gefährdungslage</li></ul></div>
+      </div>
+      <div class="pk">
+        <div class="pkimg"><img loading="lazy" id="pk10img" src="../img/pack/zehner-offen.webp" alt="10er-Schachtel Sicherheitskonzept für Ihr Wohnzimmer, geöffnet">
+        <div class="tog"><button class="chip on" data-img="../img/pack/zehner-offen.webp">Geöffnet</button><button class="chip" data-img="../img/pack/zehner-zu.webp">Geschlossen</button></div></div>
+        <div class="tx"><h3>Sicherheitskonzept für Ihr Wohnzimmer</h3><div class="sub">„Macht hoch die Tür, die Tor macht weit … wir sperren trotzdem ab.“</div>
+          <p>10-teilig, behördlich nicht abgenommen. Zehn Poller in zwei Reihen, aufgestellt wie eine Zufahrtssperre. Hinten die Aufbauanleitung samt Genehmigungsvermerk: beantragt nein, in Prüfung nein, gefühlt ja.</p>
+          <ul><li>Vorne auf der Schale: „Bitte Rettungsgasse zum Plätzchenteller freihalten.“</li><li>Je Schachtel eine Variante – die bunte Mischung zeigt nur, was es gibt.</li></ul></div>
+      </div>
+    </div>
+    <div class="v3wrap">
+      <div class="v3bar">
+        <button class="chip on" data-box="e">Einzelschachtel</button><button class="chip" data-box="z">10er-Schachtel</button>
+        <span class="sep"></span>
+        <button class="chip" data-view="front">Vorne</button><button class="chip" data-view="back">Hinten</button><button class="chip" data-view="top">Oben</button><button class="chip" data-view="bottom">Unten</button><button class="chip" data-view="side">Seite</button>
+      </div>
+      <div class="v3" id="v3"><div class="shadow" id="v3sh"></div><div class="obj" id="v3obj"></div></div>
+      <div class="v3hint">Ziehen zum Drehen · Mausrad oder zwei Finger zum Zoomen · Doppelklick setzt zurück</div>
+    </div>
+  </div>
+</section>
+
+<section class="alt center">
+  <div class="wrap">
+    <p class="quote serif">„Früher haben wir uns gefragt, was an den Baum kommt.<br><b>Heute wissen wir, was davor steht.</b>“</p>
+  </div>
+</section>
+
+<section id="fragen">
+  <div class="wrap" style="max-width:820px">
+    <div class="center"><div class="eyebrow">Häufige Fragen</div><h2>Gut zu wissen.</h2></div>
+    <details><summary>Ist das ernst gemeint?</summary><p>Todernst. Und mit viel Liebe gemacht. Wer schon mal auf einem deutschen Weihnachtsmarkt war, weiß, warum.</p></details>
+    <details><summary>Woraus ist der Christbaumpoller?</summary><p>Aus einem leichten Kern in Betonoptik, von Hand grundiert und lackiert, in Metallic glänzend oder samtig matt. Der Schnee ist von Hand aufgetragen und mit Glitzer versiegelt. Messingöse und Goldfaden sind dabei.</p></details>
+    <details><summary>Hält mein Baum das aus?</summary><p>Größe S und M hängen an jedem normalen Zweig. Für L empfehlen wir einen kräftigen Ast weiter innen, so wie im echten Leben: Der Poller steht da, wo es drauf ankommt.</p></details>
+    <details><summary>Warum steht „#wirschaffen… …dass…“ drauf?</summary><p>Weil es auf die Blöcke gehört wie der Stadtname. Und weil wir es schaffen. Jedes Jahr wieder.</p></details>
+    <details><summary>Bekomme ich ihn noch vor Heiligabend?</summary><p>Die erste Auflage ist begrenzt. Wer bis zum 2. Advent vorbestellt, bekommt bevorzugt geliefert. Die genauen Liefertermine nennen wir mit der Bestätigung.</p></details>
+    <details><summary>Wie wird verpackt?</summary><p>Einzeln in der Einzelschachtel „Die Einzelmaßnahme“, ab 10 Stück in der 10er-Schachtel „Sicherheitskonzept für Ihr Wohnzimmer“. 20, 30 oder 100 Stück kommen in zwei, drei oder zehn 10er-Schachteln. Alles recyclebarer Karton, festlich bedruckt.</p></details>
+    <details><summary>Ist das Spielzeug?</summary><p>Nein. Dekoration für Erwachsene. Kleinteile, nicht für Kinder unter 3 Jahren geeignet.</p></details>
+  </div>
+</section>
+
+<section id="wunschzettel" class="alt center">
+  <div class="wrap">
+    <div class="eyebrow">Wunschzettel</div>
+    <h2>Jetzt vorbestellen.</h2>
+    <p class="intro">Wir starten mit einer kleinen Auflage. Schicken Sie uns Ihren Wunschzettel, wir melden uns mit Bestätigung, Liefertermin und Zahlungsinfo. Noch zahlen Sie nichts. 20, 30 und 100 Stück kommen in zwei, drei bzw. zehn 10er-Schachteln.</p>
+    <form id="order" onsubmit="return sendOrder(event)">
+      <div id="wunsch">Noch leer. Wählen Sie oben Ihre Poller aus.</div>
+      <input id="oname" placeholder="Ihr Name" required>
+      <input id="oort" placeholder="PLZ und Ort" required>
+      <textarea id="omsg" rows="3" placeholder="Nachricht (optional)"></textarea>
+      <button class="btn gold" type="submit">Wunschzettel abschicken</button>
+      <small style="color:var(--mut)">Öffnet Ihr E-Mail-Programm mit dem fertigen Wunschzettel an info@ebbing-project.de.</small>
+    </form>
+  </div>
+</section>
+
+<footer><div class="wrap">
+  <div><b style="color:var(--tx)">Ebbing Project GmbH</b><br>Marienthaler Str. 44a · 46348 Raesfeld<br>info@ebbing-project.de</div>
+  <div>Christbaumpoller ist eine Satire-Kollektion von Ebbing Project.<br>Alle Abbildungen sind Gestaltungsentwürfe. <a href="#">Impressum</a> · <a href="#">Datenschutz</a> · <a href="#">Widerruf</a></div>
+</div></footer>
+<button class="mus" id="mus" aria-label="Musik an oder aus"><span class="ic">🔔</span><span id="musT">Musik an</span></button>
+<div class="toast" id="toast">Auf dem Wunschzettel ✓</div>
+
+<script>
+// Schnee
+(function(){const c=document.getElementById('snow'),x=c.getContext('2d');let W,H,f=[];
+function r(){W=c.width=c.offsetWidth;H=c.height=c.offsetHeight;f=Array.from({length:Math.min(220,W/6)},()=>({x:Math.random()*W,y:Math.random()*H,s:.6+Math.random()*2.6,v:.3+Math.random()*1.1,p:Math.random()*6}))}
+r();addEventListener('resize',r);
+(function d(t){x.clearRect(0,0,W,H);x.fillStyle='rgba(255,255,255,.85)';for(const k of f){k.y+=k.v;if(k.y>H+5){k.y=-5;k.x=Math.random()*W}const xx=k.x+Math.sin(t/1400+k.p)*14;x.beginPath();x.arc(xx,k.y,k.s,0,7);x.fill()}requestAnimationFrame(d)})(0)})();
+
+// Konfigurator
+const NAME={gold:'Gold',silber:'Silber',rot:'Rot',glanz:'glänzend',matt:'matt'};
+const W={S:250,M:320,L:390};
+const st={farbe:'gold',oberflaeche:'glanz',schnee:'',groesse:'S'};  // Voreinstellung immer Größe S (Jörg 21.11.2026)
+const eur=v=>v.toFixed(2).replace('.',',')+' €';
+// Preise je Größe (Vorgabe Jörg 20.11.2026): einzeln / 10er / 20er / 30er / 100 Stück inkl. Gravur
+const PR={S:{1:3.99,10:24.99,20:39.99,30:49.99,100:149.99},M:{1:4.99,10:28.99,20:46.99,30:57.99,100:174.99},L:{1:5.99,10:32.99,20:53.99,30:66.99,100:199.99}};
+function stp(n,g){const p=PR[g];return n>=100?p[100]/100:n>=30?p[30]/30:n>=20?p[20]/20:n>=10?p[10]/10:p[1]}
+function rabatt(n,g){return 1-stp(n,g)/PR[g][1]}
+function summe(n,g){return Math.round(n*stp(n,g)*100)/100}
+const qty=document.getElementById('qty');
+function key(){return st.farbe+'-'+st.oberflaeche+st.schnee}
+function variante(){return NAME[st.farbe]+' '+NAME[st.oberflaeche]+(st.schnee?' · mit Schnee':'')}
+function label(){return variante()+' · '+st.groesse}
+function syncChips(){document.querySelectorAll('.chips[data-k]').forEach(g=>g.querySelectorAll('.chip').forEach(c=>c.classList.toggle('on',c.dataset.v===st[g.dataset.k])))}
+function upd(){
+  const n=Math.max(1,parseInt(qty.value)||1), g=st.groesse;
+  document.getElementById('stageImg').src='img/'+key()+'.webp';
+  document.getElementById('packImg').src='img/'+key()+'.webp';
+  document.getElementById('stageHang').style.setProperty('--w',W[g]+'px');
+  document.getElementById('vname').textContent=label();
+  document.getElementById('price').firstChild.textContent=eur(summe(n,g));
+  const r=rabatt(n,g);
+  document.getElementById('pinfo').textContent=(n>1?n+' Stück · ':'')+(r>0.005?Math.round(r*100)+' % gespart · ':'')+'Stückpreis '+eur(stp(n,g))+(n>=100?' · persönliche Gravur oder Schriftzug inklusive':'')+' · inkl. MwSt., zzgl. Versand';
+  document.getElementById('packFor').textContent='Preise für Größe '+g+' · '+variante();
+  const p=PR[g];
+  document.getElementById('pp1').textContent=eur(p[1]);
+  for(const k of [10,20,30]){document.getElementById('pp'+k).textContent=eur(p[k]);
+    document.getElementById('pi'+k).textContent='statt '+eur(p[1]*k)+' · '+Math.round((1-p[k]/(p[1]*k))*100)+' % gespart · '+eur(p[k]/k)+' pro Stück'}
+  document.getElementById('pp100').textContent='100 Stück: '+eur(p[100]);
+}
+document.querySelectorAll('.chips[data-k]').forEach(g=>g.addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;
+  st[g.dataset.k]=b.dataset.v;syncChips();upd()}));
+document.getElementById('minus').onclick=()=>{qty.value=Math.max(1,(parseInt(qty.value)||1)-1);upd()};
+document.getElementById('plus').onclick=()=>{qty.value=(parseInt(qty.value)||0)+1;upd()};
+document.querySelectorAll('[data-q]').forEach(b=>b.onclick=()=>{qty.value=b.dataset.q;upd()});
+qty.oninput=upd;
+// Raster
+const grid=document.getElementById('grid');
+['gold','silber','rot'].forEach(f=>['glanz','matt'].forEach(o=>['','-schnee'].forEach(s=>{
+  const d=document.createElement('div');d.className='tile';
+  d.innerHTML=`<img loading="lazy" src="../img/${f}-${o}${s}.webp" alt=""><b>${NAME[f]} ${NAME[o]}</b><span>${s?'mit Schnee · ':''}ab 3,99 €</span>`;
+  d.onclick=()=>{st.farbe=f;st.oberflaeche=o;st.schnee=s;syncChips();upd();document.getElementById('kollektion').scrollIntoView({behavior:'smooth'})};
+  grid.appendChild(d)})));
+// Wunschzettel: jede Zeile mit eigener Größe, Menge und Preis
+const liste=[];
+function text(){const n=liste.reduce((a,z)=>a+z.q,0),sum=Math.round(liste.reduce((a,z)=>a+z.p,0)*100)/100;
+  return {n,sum,grav:liste.some(z=>z.q>=100),zeilen:liste.map(z=>z.q+' × Christbaumpoller '+z.t+' – '+eur(z.p)+' · '+verp(z.q))}}
+function verp(q){const z=Math.floor(q/10),e=q%10,t=[];if(z)t.push(z===1?'eine 10er-Schachtel':z+' × 10er-Schachtel');if(e)t.push(e===1?'eine Einzelschachtel':e+' × Einzelschachtel');return t.join(' + ')}
+function add(q){const g=st.groesse;liste.push({t:label(),q,p:summe(q,g)});const x=text(),w=document.getElementById('wunsch');
+  w.innerHTML=x.zeilen.map(z=>'• '+z).join('<br>')+'<br><b>'+x.n+' Stück · Summe '+eur(x.sum)+'</b>'+(x.grav?'<br>Persönliche Gravur oder eigener Schriftzug auf einem Poller: inklusive – Wunschtext bitte unten in die Nachricht.':'');
+  const t2=document.getElementById('toast');t2.classList.add('show');setTimeout(()=>t2.classList.remove('show'),1600)}
+document.getElementById('addBtn').onclick=()=>add(Math.max(1,parseInt(qty.value)||1));
+document.querySelectorAll('.set-add').forEach(b=>b.onclick=()=>add(parseInt(b.dataset.n)));
+upd();
+function sendOrder(e){e.preventDefault();
+  if(!liste.length){alert('Der Wunschzettel ist noch leer.');return false}
+  const x=text();
+  const body='Wunschzettel Christbaumpoller\n\n'+x.zeilen.map(z=>'- '+z).join('\n')+'\n\n'+x.n+' Stück\nSumme: '+eur(x.sum)+(x.grav?'\nPersönliche Gravur oder eigener Schriftzug inklusive (ab 100 Stück)':'')+'\n\nName: '+document.getElementById('oname').value+'\nOrt: '+document.getElementById('oort').value+'\n\n'+document.getElementById('omsg').value;
+  location.href='mailto:info@ebbing-project.de?subject='+encodeURIComponent('Wunschzettel Christbaumpoller')+'&body='+encodeURIComponent(body);return false}
+
+// Verpackung: Bildumschalter 10er
+document.querySelectorAll('.pk .tog .chip').forEach(b=>b.onclick=()=>{b.parentNode.querySelectorAll('.chip').forEach(c=>c.classList.remove('on'));b.classList.add('on');document.getElementById('pk10img').src=b.dataset.img});
+// 3D-Viewer (CSS 3D, ohne Bibliothek)
+(function(){
+  const stage=document.getElementById('v3'),obj=document.getElementById('v3obj'),sh=document.getElementById('v3sh');
+  const BOX={e:{B:74,T:36,H:60,K:30,p:'e'},z:{B:378,T:77,H:53,K:0,p:'z'}};
+  let cur='e',rx=-18,ry=-32,zoom=1,auto=true,base=4,loaded=false;
+  function face(cls,w,h,tf,img){const d=document.createElement('div');d.className='f '+cls;d.style.width=w+'px';d.style.height=h+'px';
+    d.style.marginLeft=(-w/2)+'px';d.style.marginTop=(-h/2)+'px';d.style.transform=tf;if(img)d.dataset.bg=img;obj.appendChild(d);return d}
+  function build(){obj.innerHTML='';const b=BOX[cur],sw=stage.clientWidth,shh=stage.clientHeight;
+    base=Math.min(sw*(cur==='e'?0.42:0.66)/b.B,shh*0.52/(b.H+b.K));const s=base,B=b.B*s,T=b.T*s,H=b.H*s,K=b.K*s,p='../img/pack/3d/'+b.p;
+    face('',B,H,`translateY(${K/2}px) translateZ(${T/2}px)`,p+'-front.webp');
+    face('',B,H,`translateY(${K/2}px) rotateY(180deg) translateZ(${T/2}px)`,p+'-back.webp');
+    face('',T,H,`translateY(${K/2}px) rotateY(90deg) translateZ(${B/2}px)`,p+'-right.webp');
+    face('',T,H,`translateY(${K/2}px) rotateY(-90deg) translateZ(${B/2}px)`,p+'-left.webp');
+    face('',B,T,`translateY(${K/2-H/2}px) rotateX(90deg)`,p+'-top.webp');
+    face('',B,T,`translateY(${K/2+H/2}px) rotateX(-90deg)`,p+'-bottom.webp');
+    if(b.K){face('kopf',B,K,`translateY(${K/2-H/2-K/2}px) translateZ(${-T/2+0.6}px)`,p+'-kopf.webp');
+      face('kopfb',B,K,`translateY(${K/2-H/2-K/2}px) translateZ(${-T/2+0.3}px) rotateY(180deg)`,null)}
+    sh.style.width=(B*1.5)+'px';sh.style.height=(T*1.6+40)+'px';sh.style.marginLeft=(-B*0.75)+'px';
+    if(loaded)load();draw()}
+  function load(){loaded=true;obj.querySelectorAll('.f[data-bg]').forEach(f=>f.style.backgroundImage=`url(${f.dataset.bg})`)}
+  function draw(){obj.style.transform=`scale(${zoom}) rotateX(${rx}deg) rotateY(${ry}deg)`;
+    const b=BOX[cur];sh.style.transform=`translateY(${(b.H/2+12)*base*zoom}px) scale(${zoom}) scaleY(.35)`;sh.style.opacity=Math.max(0,Math.cos(rx*Math.PI/180))}
+  const io=new IntersectionObserver(es=>{if(es.some(e=>e.isIntersecting)){load();io.disconnect()}},{rootMargin:'400px'});io.observe(stage);
+  // Ziehen, Mausrad, Zwei-Finger-Zoom
+  const pts=new Map();let last=null,pinch=0;
+  stage.addEventListener('pointerdown',e=>{stage.setPointerCapture(e.pointerId);pts.set(e.pointerId,[e.clientX,e.clientY]);auto=false;
+    if(pts.size===1)last=[e.clientX,e.clientY];if(pts.size===2){const [a,b]=[...pts.values()];pinch=Math.hypot(a[0]-b[0],a[1]-b[1])}});
+  stage.addEventListener('pointermove',e=>{if(!pts.has(e.pointerId))return;pts.set(e.pointerId,[e.clientX,e.clientY]);
+    if(pts.size===2){const [a,b]=[...pts.values()],d=Math.hypot(a[0]-b[0],a[1]-b[1]);if(pinch){zoom=Math.min(4,Math.max(.5,zoom*d/pinch))}pinch=d;draw();return}
+    if(last){ry+=(e.clientX-last[0])*0.45;rx-=(e.clientY-last[1])*0.45;last=[e.clientX,e.clientY];draw()}});
+  const up=e=>{pts.delete(e.pointerId);pinch=0;last=pts.size===1?[...pts.values()][0]:null};
+  stage.addEventListener('pointerup',up);stage.addEventListener('pointercancel',up);
+  stage.addEventListener('wheel',e=>{e.preventDefault();auto=false;zoom=Math.min(4,Math.max(.5,zoom*Math.exp(-e.deltaY*0.0015)));draw()},{passive:false});
+  stage.addEventListener('dblclick',()=>{rx=cur==='z'?-30:-18;ry=-32;zoom=1;draw()});
+  const V={front:[-8,0],back:[-8,180],top:[-88,0],bottom:[88,0],side:[-10,-90]};
+  document.querySelectorAll('.v3bar [data-view]').forEach(b=>b.onclick=()=>{auto=false;[rx,ry]=V[b.dataset.view];draw()});
+  document.querySelectorAll('.v3bar [data-box]').forEach(b=>b.onclick=()=>{document.querySelectorAll('.v3bar [data-box]').forEach(c=>c.classList.remove('on'));b.classList.add('on');cur=b.dataset.box;zoom=1;rx=cur==='z'?-30:-18;ry=-32;build()});
+  addEventListener('resize',build);
+  (function spin(){if(auto){ry+=0.12;draw()}requestAnimationFrame(spin)})();
+  build();
+})();
+
+// Hintergrundmusik „Feierliche Zufahrt“, Fassung 3 Engelschor (eigene Komposition) – Endlosschleife ohne Lücke (Web Audio), startet mit der ersten Berührung
+(function(){
+  const btn=document.getElementById('mus'),txt=document.getElementById('musT');
+  let ctx=null,buf=null,src=null,gain=null,on=false,want=true,loading=null;
+  try{if(localStorage.getItem('cbp-musik')==='aus')want=false}catch(e){}
+  function ui(){btn.classList.toggle('on',on);txt.textContent=on?'Musik aus':'Musik an'}
+  async function ensure(){if(buf)return;if(!loading)loading=(async()=>{ctx=ctx||new (window.AudioContext||window.webkitAudioContext)();
+    const r=await fetch('../audio/weihnacht.mp3?v=3');const a=await r.arrayBuffer();buf=await new Promise((ok,no)=>ctx.decodeAudioData(a,ok,no));
+    gain=ctx.createGain();gain.gain.value=0;gain.connect(ctx.destination)})();await loading}
+  async function start(){try{await ensure();if(ctx.state==='suspended')await ctx.resume();if(on)return;
+    src=ctx.createBufferSource();src.buffer=buf;src.loop=true;src.loopStart=0;src.loopEnd=Math.min(64,buf.duration);src.connect(gain);src.start();
+    gain.gain.cancelScheduledValues(ctx.currentTime);gain.gain.setValueAtTime(0,ctx.currentTime);gain.gain.linearRampToValueAtTime(.5,ctx.currentTime+5);on=true;ui()}catch(e){}}
+  function stop(){if(!on)return;const s=src;gain.gain.cancelScheduledValues(ctx.currentTime);gain.gain.setValueAtTime(gain.gain.value,ctx.currentTime);
+    gain.gain.linearRampToValueAtTime(0,ctx.currentTime+.6);setTimeout(()=>{try{s.stop()}catch(e){}},700);on=false;ui()}
+  btn.addEventListener('click',e=>{e.stopPropagation();want=!on;try{localStorage.setItem('cbp-musik',want?'an':'aus')}catch(err){}want?start():stop()});
+  const first=e=>{if(e&&e.target&&btn.contains(e.target))return;['pointerdown','keydown','touchend'].forEach(ev=>removeEventListener(ev,first,true));if(want)start()};
+  ['pointerdown','keydown','touchend'].forEach(ev=>addEventListener(ev,first,true));
+  if(want){ensure().then(()=>{if(ctx.state==='running')start()}).catch(()=>{})}
+  // Während ein Spot läuft, pausiert die Musik
+  document.querySelectorAll('video').forEach(v=>{v.addEventListener('play',()=>{if(on){v._m=1;stop()}});
+    v.addEventListener('pause',()=>{if(v._m&&want){v._m=0;start()}})});
+  document.addEventListener('visibilitychange',()=>{if(!ctx)return;document.hidden?ctx.suspend():(on&&ctx.resume())});
+  ui();
+})();
+
+/* Am Baum: Großansicht */
+(function(){const f=[...document.querySelectorAll('#mood figure')],L=document.getElementById('mlb');let k=0;
+ const show=()=>{const im=f[k].querySelector('img');document.getElementById('mlbi').src=im.src.replace('.webp','-gross.webp');document.getElementById('mlbi').alt=im.alt;document.getElementById('mlbp').innerHTML=f[k].querySelector('figcaption').innerHTML};
+ f.forEach((x,i)=>x.onclick=()=>{k=i;show();L.classList.add('open')});
+ const mv=d=>{k=(k+d+f.length)%f.length;show()};
+ document.getElementById('mlbl').onclick=e=>{e.stopPropagation();mv(-1)};document.getElementById('mlbr').onclick=e=>{e.stopPropagation();mv(1)};
+ document.getElementById('mlbx').onclick=()=>L.classList.remove('open');L.onclick=e=>{if(e.target===L)L.classList.remove('open')};
+ document.addEventListener('keydown',e=>{if(!L.classList.contains('open'))return;if(e.key==='Escape')L.classList.remove('open');if(e.key==='ArrowLeft')mv(-1);if(e.key==='ArrowRight')mv(1)});
+ let tx=null;L.addEventListener('touchstart',e=>{tx=e.touches[0].clientX},{passive:true});L.addEventListener('touchend',e=>{if(tx===null)return;const d=e.changedTouches[0].clientX-tx;if(Math.abs(d)>40)mv(d<0?1:-1);tx=null});
+})();
+</script>
+</body>
+</html>
