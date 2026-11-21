@@ -1,0 +1,5 @@
+*.pyc
+__pycache__/
+quelle/*.mp4
+quelle/*.wav
+quelle/test_*.jpg

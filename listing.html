@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Entwurf: Marktplatz-Produktseite Christbaumpoller · Ebbing Project</title>
+<link rel="icon" href="img/favicon.png">
+<style>
+:root{--ink:#0f1111;--mut:#565959;--line:#d5d9d9;--bg:#f0f2f2;--link:#007185;--hov:#c7511f;--nav:#131921;--nav2:#232f3e;--yel:#ffd814;--yelb:#fcd200;--ora:#ffa41c;--orab:#ff8f00;--green:#007600;--deal:#cc0c39}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,"Helvetica Neue",Helvetica,sans-serif;color:var(--ink);background:#fff;font-size:14px;line-height:20px}
+a{color:var(--link);text-decoration:none}
+a:hover{color:var(--hov);text-decoration:underline}
+button{font-family:inherit}
+.draft{background:#fff3cd;color:#5c4400;font-size:12px;padding:6px 16px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;border-bottom:1px solid #f0d58c}
+.draft b{color:#8a5a00}
+.tabs{background:#eaeded;display:flex;gap:2px;padding:6px 16px 0;font-size:13px}
+.tabs a{padding:6px 14px;border-radius:6px 6px 0 0;color:var(--ink);background:#dfe3e3}
+.tabs a.on{background:var(--nav);color:#fff;font-weight:700}
+.tabs a:hover{text-decoration:none;background:#cfd5d5}.tabs a.on:hover{background:var(--nav)}
+.top{background:var(--nav);color:#fff;padding:8px 16px;display:flex;align-items:center;gap:14px;position:relative}
+.top .logo{font-weight:700;font-size:20px;letter-spacing:-.02em;padding:4px 8px;border:1px solid transparent;border-radius:2px;white-space:nowrap}
+.top .logo:hover{border-color:#fff}
+.top .logo span{color:var(--ora)}
+.top .search{flex:1;max-width:900px;display:flex;border-radius:6px;overflow:hidden;height:40px}
+.top .search .cat{background:#e6e6e6;color:#555;font-size:12px;padding:0 10px;display:flex;align-items:center;border-right:1px solid #cdcdcd;white-space:nowrap}
+.top .search .q{flex:1;background:#fff;color:var(--ink);padding:0 10px;display:flex;align-items:center;font-size:15px}
+.top .search .go{background:#febd69;width:45px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#333}
+.cartbtn{background:none;border:1px solid transparent;color:#fff;cursor:pointer;display:flex;align-items:flex-end;gap:4px;padding:6px 8px;border-radius:2px;font-size:22px;font-weight:700;position:relative}
+.cartbtn:hover{border-color:#fff}
+.cartbtn span{color:var(--ora);font-size:16px;position:absolute;left:22px;top:0}
+.cartbtn small{font-size:14px;font-weight:700;margin-left:14px}
+.cartbtn.pop{animation:pop .4s}
+@keyframes pop{50%{transform:scale(1.18)}}
+.cartpanel{position:absolute;right:12px;top:58px;width:340px;background:#fff;color:var(--ink);border:1px solid var(--line);border-radius:8px;box-shadow:0 4px 18px rgba(0,0,0,.25);padding:12px;z-index:30;display:none}
+.cartpanel.open{display:block}
+.cph{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.cph button,.cpf button{background:#fff;border:1px solid var(--line);border-radius:8px;padding:3px 10px;cursor:pointer;font-size:13px}
+.ci{display:grid;grid-template-columns:44px 1fr auto;gap:8px;align-items:center;border-top:1px solid var(--line);padding:6px 0;font-size:13px;line-height:16px}
+.ci img{width:44px;height:44px;object-fit:contain}
+.ci button{background:none;border:0;color:var(--link);cursor:pointer;font-size:12px}
+.cpf{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);padding-top:8px;margin-top:4px}
+.subnav{background:var(--nav2);color:#fff;font-size:14px;padding:7px 16px;display:flex;gap:18px;flex-wrap:wrap}
+.subnav span{white-space:nowrap}
+.subnav b{font-weight:700}
+.crumb{font-size:12px;color:var(--mut);padding:10px 18px}
+.crumb a{color:var(--mut)}
+.wrap{max-width:1500px;margin:0 auto;padding:0 18px 40px}
+.main{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr) 245px;gap:24px;align-items:start}
+/* Galerie */
+.gal{display:grid;grid-template-columns:44px 1fr;gap:10px;position:sticky;top:10px}
+.thumbs{display:flex;flex-direction:column;gap:8px}
+.thumbs img{width:40px;height:40px;object-fit:contain;border:1px solid #a2a6ac;border-radius:8px;cursor:pointer;background:#fff;padding:2px}
+.thumbs img:hover{box-shadow:0 0 3px 2px rgba(228,121,17,.5)}
+.thumbs img.on{border-color:#e77600;box-shadow:0 0 3px 2px rgba(228,121,17,.5)}
+.big{aspect-ratio:1;overflow:hidden;background:#fff;display:flex;align-items:center;justify-content:center;position:relative;cursor:zoom-in;touch-action:pan-y}
+.big img{width:100%;height:100%;object-fit:contain;transition:transform .08s}
+.big.zoom img{transform:scale(2.2)}
+.arr{position:absolute;top:50%;transform:translateY(-50%);width:36px;height:52px;border:1px solid var(--line);background:rgba(255,255,255,.9);border-radius:6px;font-size:28px;cursor:pointer;color:#333;opacity:0;transition:.2s}
+.big:hover .arr,.lb .arr{opacity:1}
+.arr.l{left:6px}.arr.r{right:6px}
+.cnt{position:absolute;bottom:8px;right:10px;font-size:12px;color:var(--mut);background:rgba(255,255,255,.85);padding:0 6px;border-radius:4px}
+.zoomhint{font-size:12px;color:var(--mut);text-align:center;margin-top:6px}
+@media(hover:none){.arr{opacity:1}}
+/* Info */
+h1{font-size:24px;font-weight:400;line-height:32px}
+.hlt{font-size:14px;color:var(--mut);margin:4px 0 2px;line-height:19px}
+.brand{font-size:14px;margin:4px 0}
+.rate{font-size:14px;color:var(--mut);padding-bottom:8px;border-bottom:1px solid #e7e7e7}
+.rate .st{color:#c8c8c8;letter-spacing:1px;margin-right:6px}
+.price{margin:12px 0 2px;font-size:28px;line-height:32px;display:flex;align-items:flex-start;gap:8px;flex-wrap:wrap}
+.price .pct{color:var(--deal);font-weight:300;font-size:24px}
+.pr{display:inline-flex;align-items:flex-start;font-weight:400}
+.pr .w{font-size:28px;line-height:28px}
+.pr sup{font-size:13px;line-height:14px;margin-left:1px;top:0;position:relative}
+.price small,.unit{font-size:12px;color:var(--mut);font-weight:400}
+.ref{font-size:12px;color:var(--mut)}
+.ref s{margin-left:4px}
+.var{margin:14px 0}
+.var .lab{font-size:14px;margin-bottom:6px}
+.var .lab b{font-weight:700}
+.sw{display:flex;flex-wrap:wrap;gap:8px}
+.sw button{border:1px solid #8d9096;background:#fff;border-radius:8px;cursor:pointer;font-size:14px;padding:6px 12px;line-height:18px;text-align:left}
+.sw button:hover{background:#f7fafa}
+.sw button.on{border:2px solid var(--link);padding:5px 11px;background:#edfdff}
+.sw button small{color:var(--mut);font-size:12px}
+.sw button img{width:50px;height:50px;object-fit:contain;display:block}
+.sw.col button{padding:3px}
+.sw.col button.on{padding:2px}
+ul.bul{margin:6px 0 0 18px}
+ul.bul li{margin:4px 0;font-size:14px}
+h2{font-size:24px;font-weight:700;line-height:32px;margin:6px 0 12px}
+h2.s{font-size:16px;line-height:24px;margin:16px 0 4px}
+/* Kaufbox */
+.box{border:1px solid var(--line);border-radius:8px;padding:14px 18px;position:sticky;top:10px}
+.box .price{margin-top:0}
+.box p{font-size:14px;margin:8px 0}
+.box .ok{color:var(--green);font-size:18px;line-height:24px}
+.box select{font-size:13px;padding:5px 8px;border-radius:8px;border:1px solid var(--line);width:100%;margin:6px 0 10px;background:#f0f2f2;box-shadow:0 2px 5px rgba(15,17,17,.15)}
+.btn{display:block;width:100%;border-radius:100px;padding:8px 10px;font-size:13px;cursor:pointer;margin:8px 0;color:var(--ink);box-shadow:0 2px 5px rgba(213,217,217,.5)}
+.btn.a{background:var(--yel);border:1px solid var(--yelb)}
+.btn.a:hover{background:#f7ca00}
+.btn.b{background:var(--ora);border:1px solid var(--orab)}
+.btn.b:hover{background:#fa8900}
+.btn.w{background:#fff;border:1px solid var(--line)}
+.box table{font-size:12px;color:var(--mut);margin-top:10px;border-collapse:collapse;width:100%}
+.box td{padding:2px 0;vertical-align:top}
+.box td:last-child{color:var(--ink)}
+/* Unterteil */
+.sec{border-top:1px solid #e7e7e7;margin-top:30px;padding-top:22px}
+.aplus{max-width:970px}
+.aplus img{width:100%;display:block}
+.aplus .hero{position:relative}
+.aplus .hero .cap{position:absolute;left:5%;top:12%;color:#fff;max-width:46%}
+.aplus .hero .cap h3{font-size:clamp(20px,3vw,36px);line-height:1.1;font-weight:700;font-family:Georgia,serif}
+.aplus .hero .cap p{font-size:clamp(13px,1.4vw,18px);margin-top:10px;color:#f1d48e}
+.cols{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:18px}
+.cols h4{font-size:16px;margin:8px 0 4px}
+.cols p{font-size:14px;color:#333}
+table.cmp{border-collapse:collapse;width:100%;margin-top:12px;font-size:14px}
+table.cmp th,table.cmp td{border:1px solid var(--line);padding:8px;text-align:center}
+table.cmp th{background:#f3f3f3;font-weight:700}
+table.cmp td.p{cursor:pointer;color:var(--link)}
+table.cmp td.p:hover{background:#fef8e6;color:var(--hov)}
+table.cmp td.sel{background:#edfdff;outline:2px solid var(--link);outline-offset:-2px;font-weight:700}
+table.info{border-collapse:collapse;width:100%;max-width:760px;font-size:14px}
+table.info th{background:#f3f3f3;text-align:left;font-weight:700;width:42%;padding:7px 12px;border-bottom:1px solid #e7e7e7}
+table.info td{padding:7px 12px;border-bottom:1px solid #e7e7e7}
+.note{font-size:12px;color:var(--mut)}
+.qa details{border-bottom:1px solid #e7e7e7;padding:10px 0;max-width:900px}
+.qa summary{cursor:pointer;font-weight:700;color:var(--ink)}
+.qa summary:hover{color:var(--hov)}
+.qa details p{margin-top:6px}
+.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%) translateY(140px);background:#232f3e;color:#fff;padding:10px 18px;border-radius:8px;transition:.3s;font-size:14px;z-index:40;box-shadow:0 3px 12px rgba(0,0,0,.3)}
+.toast.show{transform:translateX(-50%)}
+.lb{position:fixed;inset:0;background:rgba(255,255,255,.98);z-index:50;display:none;align-items:center;justify-content:center}
+.lb.open{display:flex}
+.lb img{max-width:88vw;max-height:84vh;object-fit:contain}
+.lbx{position:absolute;top:14px;right:18px;font-size:22px;background:none;border:0;cursor:pointer}
+.lbt{position:absolute;bottom:14px;left:0;right:0;text-align:center;color:var(--mut)}
+@media(max-width:1000px){.main{grid-template-columns:1fr}.gal,.box{position:static}.cols{grid-template-columns:1fr}.top .search .cat,.cartbtn small{display:none}.subnav{gap:12px;font-size:13px}}
+@media(max-width:600px){.top{flex-wrap:wrap}.top .search{order:3;flex-basis:100%;max-width:none}.cartbtn{margin-left:auto}.subnav{flex-wrap:nowrap;overflow-x:auto}.draft span:last-child{display:none}.cartpanel{left:8px;right:8px;width:auto}}
+</style>
+</head>
+<body>
+<div class="draft"><span><b>ENTWURF</b> · Vorschau, wie die Produktseite in einem Online-Marktplatz aussehen könnte · keine Seite eines Marktplatzbetreibers · kein Kauf möglich</span><span>Ebbing Project GmbH · Stand 21.11.2026</span></div>
+<div class="tabs"><a href="index.html">← Christbaumpoller-Seite</a><a class="on" href="listing.html">Amazon Preview</a></div>
+<div class="top"><div class="logo">Markt<span>platz</span> · Vorschau</div><div class="search"><span class="cat">Alle ▾</span><span class="q">Christbaumschmuck lustig</span><span class="go">🔍</span></div><button class="cartbtn" id="cartbtn" aria-label="Einkaufswagen">🛒 <span id="ccount">0</span><small>Einkaufswagen</small></button>
+  <div class="cartpanel" id="cartpanel"><div class="cph"><b>Einkaufswagen (Vorschau)</b><button id="cpx" aria-label="schließen">✕</button></div><div id="citems"></div><div class="cpf"><span>Summe: <b id="csum">0,00 €</b></span><button id="cclear">Leeren</button></div><p class="note">Nur zum Ausprobieren – hier wird nichts gekauft.</p></div></div>
+<div class="subnav"><span><b>☰ Alle</b></span><span>Angebote des Tages</span><span>Weihnachten</span><span>Geschenkideen</span><span>Wohnen &amp; Dekoration</span><span>Christbaumschmuck</span></div>
+<div class="crumb"><a href="#">Küche, Haushalt &amp; Wohnen</a> › <a href="#">Saisonale Dekoration</a> › <a href="#">Weihnachten</a> › <a href="#">Christbaumschmuck</a></div>
+<div class="wrap">
+<div class="main">
+  <!-- Galerie -->
+  <div>
+    <div class="gal"><div class="thumbs" id="thumbs"></div><div><div class="big" id="bigbox"><img id="big" alt=""><button class="arr l" id="prev" aria-label="vorheriges Bild">‹</button><button class="arr r" id="next" aria-label="nächstes Bild">›</button><span class="cnt" id="gcnt"></span></div><div class="zoomhint">Maus drüber zum Zoomen · anklicken für die Großansicht · wischen am Handy</div></div></div>
+  </div>
+  <!-- Info -->
+  <div>
+    <h1 id="title"></h1>
+    <div class="hlt" id="hlt"></div>
+    <div class="brand">Marke: <a href="index.html">Christbaumpoller</a> · Besuchen Sie den Markenshop</div>
+    <div class="rate"><span class="st">☆☆☆☆☆</span>Noch keine Bewertungen · <a href="#fragen">Fragen und Antworten</a></div>
+    <div class="price" id="price"></div>
+    <div class="unit" id="unit"></div>
+    <div class="var"><div class="lab">Farbe: <b id="vFarbe"></b></div><div class="sw col" id="swFarbe"></div></div>
+    <div class="var"><div class="lab">Größe: <b id="vGr"></b></div><div class="sw" id="swGr"></div></div>
+    <div class="var"><div class="lab">Packungsgröße: <b id="vPk"></b></div><div class="sw" id="swPk"></div></div>
+    <h2 class="s">Info zu diesem Artikel</h2>
+    <ul class="bul">
+      <li><b>EIN STÜCK SICHERHEITSGEFÜHL FÜR ZU HAUSE</b> – Draußen steht er vor den Weihnachtsmärkten, jetzt hängt er am Baum. Der Christbaumpoller ist der Sperrblock, den jeder kennt, im Kleinformat, mit Pinselschrift #wirschaffendas.</li>
+      <li><b>DETAILS WIE BEIM GROSSEN</b> – Oben 2 × 4 quadratische Noppen, unten passende Mulden und zwei durchgehende Staplertaschen – stapelbar wie das Original. Dazu Messingöse und goldenes Satinband mit 12 cm Schlaufe, schon montiert. Auspacken, aufhängen, fertig.</li>
+      <li><b>DREI GRÖSSEN, ZWÖLF LOOKS</b> – Gold, Silber oder Rot, glänzend oder matt, mit oder ohne Schnee. S (5 cm) für die Zweigspitzen, M (7 cm) für die Mitte, L (9 cm) für einen kräftigen Ast weiter innen. Eine Variante je Packung.</li>
+      <li><b>VERPACKT WIE EINE ORDENTLICHE MASSNAHME</b> – Einzeln in der Schachtel „Die Einzelmaßnahme“ mit Sichtfenster. Ab 10 Stück im „Sicherheitskonzept für Ihr Wohnzimmer“, zehnteilig, behördlich nicht abgenommen. Gut zum Wichteln und für die Weihnachtsfeier.</li>
+      <li><b>DEKO, KEIN SPIELZEUG</b> – Für Erwachsene. Enthält Kleinteile, nicht für Kinder unter 3 Jahren. Nicht in der Nähe von offenem Feuer oder brennenden Kerzen aufhängen. Material und Gewicht nach Freigabe der Muster.</li>
+    </ul>
+  </div>
+  <!-- Kaufbox -->
+  <div class="box">
+    <div class="price" id="bprice"></div>
+    <p class="note" id="btot">inkl. MwSt. · Versandkosten: Angaben folgen</p>
+    <p>Lieferung: <b>Vorbestellung</b> – Liefertermin wird nach der ersten Auflage bekannt gegeben.</p>
+    <p class="ok">Vorbestellbar</p>
+    <p class="note">Lieferadresse: wird beim Kauf abgefragt</p>
+    <label class="note" for="qty">Menge</label>
+    <select id="qty"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option></select>
+    <button class="btn a" id="cart">In den Einkaufswagen</button>
+    <button class="btn b" id="buy">Jetzt kaufen</button>
+    <button class="btn w" id="wish">Auf die Wunschliste</button>
+    <table><tr><td>Versand</td><td>Ebbing Project GmbH</td></tr><tr><td>Verkäufer</td><td>Ebbing Project GmbH</td></tr><tr><td>Rückgaben</td><td>30 Tage (Entwurf)</td></tr><tr><td>Zahlung</td><td>Sichere Transaktion</td></tr></table>
+  </div>
+</div>
+
+<!-- Markeninhalt -->
+<div class="sec aplus">
+  <h2>Produktbeschreibung des Herstellers</h2>
+  <div class="hero"><img src="img/listing/aplus-kopf.webp" alt="Christbaumpoller am Weihnachtsbaum" style="aspect-ratio:970/600;object-fit:cover"><div class="cap"><h3>Was uns draußen schützt,<br>ist längst Tradition.</h3><p>Jetzt auch für Ihren Baum. #wirschaffendas</p></div></div>
+  <div class="cols">
+    <div><img src="img/listing/staplertaschen.webp" alt="Staplertaschen"><h4>Mit echten Staplertaschen</h4><p>Zwei durchgehende Taschen an der Unterseite. Das Detail, an dem jeder den Block sofort erkennt.</p></div>
+    <div><img src="img/listing/verpackung-einzel.webp" alt="Einzelschachtel"><h4>„Die Einzelmaßnahme“</h4><p>Die Geschenkschachtel mit Kirchenfenster, Kopfkarte und Sichtfenster. Ein Poller, festlich verpackt.</p></div>
+    <div><img src="img/listing/verpackung-10er.webp" alt="10er-Schachtel geöffnet"><h4>„Sicherheitskonzept für Ihr Wohnzimmer“</h4><p>Zehnteilig, behördlich nicht abgenommen. Zehn Poller in zwei Reihen, die Zufahrtssperre für unter den Baum.</p></div>
+  </div>
+  <div class="cols" style="grid-template-columns:1fr 2fr;align-items:center">
+    <div><img src="img/listing/groessen.webp" alt="Größen S M L"></div>
+    <div><h4>Drei Größen für jeden Ast</h4>
+      <table class="cmp" id="cmp"></table>
+      <p style="margin-top:6px">S mit 5 cm für die Zweigspitzen, M mit 7 cm für die Mitte, L mit 9 cm für einen kräftigen Ast weiter innen. Alle mit Messingöse und goldenem Satinband.</p></div>
+  </div>
+</div>
+
+<div class="sec"><h2>Produktinformationen</h2>
+  <table class="info" id="info"></table>
+  <p class="note" style="margin-top:10px">Angaben mit „folgt“ werden nach Musterfreigabe und Herstellerauswahl ergänzt.</p>
+</div>
+<div class="sec"><h2>Sicherheitsinformationen</h2>
+  <p>Dekoartikel, kein Spielzeug. Enthält Kleinteile – nicht für Kinder unter 3 Jahren. Nicht in der Nähe offener Flammen aufhängen.</p>
+  <p class="note" style="margin-top:6px">Hersteller / verantwortliche Person in der EU: Ebbing Project GmbH, Marienthaler Str. 44a, 46348 Raesfeld, Deutschland, info@ebbing-project.de</p>
+</div>
+<div class="sec qa" id="fragen"><h2>Fragen und Antworten</h2>
+  <details><summary>Wie groß ist der Poller?</summary><p>S ist 5 cm lang, M 7 cm, L 9 cm. Genaue Maße stehen in der Tabelle oben. S und M hängen an jedem normalen Zweig, L lieber an einen kräftigen Ast weiter innen.</p></details>
+  <details><summary>Sind in einer Packung verschiedene Farben?</summary><p>Nein. Jede Packung enthält eine Variante. Wer mischen will, bestellt mehrere Packungen.</p></details>
+  <details><summary>Wie wird verpackt?</summary><p>Einzeln in der Schachtel „Die Einzelmaßnahme“. Ab 10 Stück in der 10er-Schachtel „Sicherheitskonzept für Ihr Wohnzimmer“, 20 und 30 Stück kommen in zwei und drei 10er-Schachteln.</p></details>
+  <details><summary>Woraus ist er und wie schwer?</summary><p>Material und genaues Gewicht folgen, sobald die Muster freigegeben sind. Höchstgewicht: S 12 g, M 30 g, L 55 g.</p></details>
+  <details><summary>Ist das Spielzeug?</summary><p>Nein. Dekoration für Erwachsene. Enthält Kleinteile, nicht für Kinder unter 3 Jahren.</p></details>
+</div>
+<div class="sec"><h2>Kundenrezensionen</h2><p class="note">Für diesen Artikel gibt es noch keine Bewertungen.</p></div>
+<div class="sec note">Entwurf von Ebbing Project · <a href="index.html">zur Produktseite Christbaumpoller</a> · Diese Vorschau dient nur der Abstimmung und ist keine Seite eines Marktplatzbetreibers.</div>
+</div>
+<div class="toast" id="toast">Vorschau – hier ist kein Kauf möglich.</div>
+<div class="lb" id="lb"><button class="lbx" id="lbx" aria-label="schließen">✕</button><button class="arr l" id="lbp" aria-label="vorheriges Bild">‹</button><img id="lbimg" alt=""><button class="arr r" id="lbn" aria-label="nächstes Bild">›</button><div class="lbt" id="lbt"></div></div>
+
+<script>
+const PR={S:{1:3.99,10:24.99,20:39.99,30:49.99,100:149.99},M:{1:4.99,10:28.99,20:46.99,30:57.99,100:174.99},L:{1:5.99,10:32.99,20:53.99,30:66.99,100:199.99}};
+const GR={S:{cm:5,mm:'50 × 25 × 23 mm',g:'max. 12 g'},M:{cm:7,mm:'70 × 35 × 32 mm',g:'max. 30 g'},L:{cm:9,mm:'90 × 45 × 41 mm',g:'max. 55 g'}};
+const PKS=[1,10,20,30];   // 100 mit Gravur nur über die eigene Seite, nicht im Marktplatz
+const HL={"1": "Christbaumschmuck im Sperrblock-Look mit Staplertaschen, Messingöse und Satinband, in der Einzelschachtel", "10": "Christbaumschmuck im Sperrblock-Look, 10 gleiche Anhänger mit Messingöse und Satinband in der 10er-Schachtel", "20": "Christbaumschmuck im Sperrblock-Look, 20 gleiche Anhänger mit Messingöse und Satinband in zwei 10er-Schachteln", "30": "Christbaumschmuck im Sperrblock-Look, 30 gleiche Anhänger mit Messingöse und Satinband in drei 10er-Schachteln"};
+const FARBEN=[];['gold','silber','rot'].forEach(f=>['glanz','matt'].forEach(o=>['','-schnee'].forEach(s=>FARBEN.push(f+'-'+o+s))));
+const NAME=k=>{const [f,o,s]=k.split('-');return ({gold:'Gold',silber:'Silber',rot:'Rot'})[f]+' '+(o==='glanz'?'glänzend':'matt')+(s?' mit Schnee':'')};
+const CODE=k=>{const [f,o,s]=k.split('-');return 'CBP-'+({gold:'GO',silber:'SI',rot:'RD'})[f]+'-'+(o==='glanz'?'GL':'MT')+'-'+(s?'S1':'S0')};
+const st={farbe:'gold-glanz',gr:'S',pk:1};   // Voreinstellung: Gold glänzend, Größe S, 1 Stück – wird nicht gespeichert
+const cart=[];                                 // nur im Speicher, nach Neuladen leer
+const $=id=>document.getElementById(id);
+const eur=v=>v.toFixed(2).replace('.',',')+' €';
+const prHTML=v=>{const [w,c]=v.toFixed(2).split('.');return `<span class="pr"><span class="w">${w}</span><sup>,${c} €</sup></span>`};
+const pkName=n=>n===1?'1 Stück (Einzelschachtel)':n+' Stück ('+(n/10)+' × 10er-Schachtel)';
+let gi=0,peek=null;
+const CAP=['Hauptbild','Die drei Größen','Staplertaschen','Am Baum','Einzelschachtel','10er-Schachtel','Gold am Baum','Edel in Silber','Zufahrtssperre vor den Geschenken'];
+function gallery(){return ['img/listing/main-'+st.farbe+'.webp','img/listing/groessen.webp','img/listing/staplertaschen.webp','img/listing/stimmung-1.webp','img/listing/verpackung-einzel.webp','img/listing/verpackung-10er.webp','img/listing/stimmung-2.webp','img/listing/stimmung-3.webp','img/listing/stimmung-4.webp']}
+function showBig(){const g=gallery();$('big').src=peek||g[gi];$('big').alt=CAP[gi];$('gcnt').textContent=(gi+1)+' / '+g.length;
+  document.querySelectorAll('#thumbs img').forEach((t,i)=>t.classList.toggle('on',i===gi))}
+function go(d){const n=gallery().length;gi=(gi+d+n)%n;peek=null;showBig();if($('lb').classList.contains('open'))lbShow()}
+function render(){
+  const g=gallery(),p=PR[st.gr][st.pk],q=+$('qty').value;
+  $('thumbs').innerHTML=g.map((s,i)=>`<img src="${s}" data-i="${i}" alt="${CAP[i]}">`).join('');
+  document.querySelectorAll('#thumbs img').forEach(t=>t.onmouseenter=t.onclick=()=>{gi=+t.dataset.i;peek=null;showBig()});
+  showBig();
+  const pk=st.pk===1?'Einzelstück':st.pk+'er-Set';
+  $('title').textContent=`Christbaumpoller Baumschmuck, ${NAME(st.farbe)}, ${st.gr} ${GR[st.gr].cm} cm, ${st.pk} Stück`;   // Muster Kind-Artikel, max. 75 Zeichen
+  $('hlt').textContent=HL[st.pk];
+  const spar=st.pk>1?Math.round((1-p/(PR[st.gr][1]*st.pk))*100):0;
+  $('price').innerHTML=(spar?`<span class="pct">-${spar} %</span>`:'')+prHTML(p);
+  $('unit').innerHTML='('+eur(p/st.pk)+' / Stück) inkl. MwSt.'+(spar?`<div class="ref">Einzeln gekauft:<s>${eur(PR[st.gr][1]*st.pk)}</s></div>`:'');
+  $('bprice').innerHTML=prHTML(p*q);
+  $('btot').textContent=(q>1?q+' × '+eur(p)+' · ':'')+'inkl. MwSt. · Versandkosten: Angaben folgen';
+  $('vFarbe').textContent=NAME(st.farbe);
+  $('vGr').textContent=st.gr+' ('+GR[st.gr].cm+' cm)';
+  $('vPk').textContent=pkName(st.pk);
+  $('swFarbe').innerHTML=FARBEN.map(k=>`<button data-v="${k}" class="${k===st.farbe?'on':''}" title="${NAME(k)}"><img src="img/listing/main-${k}.webp" alt="${NAME(k)}"></button>`).join('');
+  $('swGr').innerHTML=['S','M','L'].map(k=>`<button data-v="${k}" class="${k===st.gr?'on':''}">${k} · ${GR[k].cm} cm<br><small>ab ${eur(PR[k][1])}</small></button>`).join('');
+  $('swPk').innerHTML=PKS.map(k=>`<button data-v="${k}" class="${k===st.pk?'on':''}">${k===1?'1 Stück':k+' Stück'}<br><small>${eur(PR[st.gr][k])}${k>1?' · '+eur(PR[st.gr][k]/k)+'/St.':''}</small></button>`).join('');
+  document.querySelectorAll('#swFarbe button').forEach(b=>{
+    b.onclick=()=>{st.farbe=b.dataset.v;gi=0;peek=null;render()};
+    b.onmouseenter=()=>{peek='img/listing/main-'+b.dataset.v+'.webp';$('vFarbe').textContent=NAME(b.dataset.v);showBig()};
+    b.onmouseleave=()=>{peek=null;$('vFarbe').textContent=NAME(st.farbe);showBig()}});
+  document.querySelectorAll('#swGr button').forEach(b=>b.onclick=()=>{st.gr=b.dataset.v;render()});
+  document.querySelectorAll('#swPk button').forEach(b=>b.onclick=()=>{st.pk=+b.dataset.v;render()});
+  $('cmp').innerHTML='<tr><th></th><th>S</th><th>M</th><th>L</th></tr>'+   // Markeninhalt: ohne Preise
+    [['Länge',k=>GR[k].cm+' cm'],['Maße',k=>GR[k].mm],['Höchstgewicht',k=>GR[k].g],['Aufhängung',k=>'Messingöse, Satinband'],['Verpackung',k=>'Einzelschachtel / 10er']].map(r=>`<tr><td><b>${r[0]}</b></td>${['S','M','L'].map(k=>`<td class="${k===st.gr?'sel':''}">${r[1](k)}</td>`).join('')}</tr>`).join('');
+  const rows=[['Marke','Christbaumpoller'],['Hersteller','Ebbing Project GmbH'],['Modellnummer',CODE(st.farbe)+'-'+st.gr],['Farbe',NAME(st.farbe)],['Größe',st.gr+' – '+GR[st.gr].mm],
+    ['Gewicht',GR[st.gr].g+' (inkl. Öse und Band)'],['Packungsgröße',st.pk===1?'1 Stück':st.pk+' Stück'],['Material','folgt (Muster in Prüfung)'],['Anlass','Weihnachten, Advent, Wichteln, Firmenfeier'],
+    ['Aufhängung','Messingöse, goldenes Satinband 3 mm, Schlaufe 12 cm'],['EAN','folgt'],['Herkunftsland','folgt'],['Erhältlich ab','Vorbestellung']];
+  $('info').innerHTML=rows.map(r=>`<tr><th>${r[0]}</th><td>${r[1]}</td></tr>`).join('');
+}
+let tt;function toast(m){const t=$('toast');t.textContent=m;t.classList.add('show');clearTimeout(tt);tt=setTimeout(()=>t.classList.remove('show'),2200)}
+/* Galerie: Zoom, Pfeile, Großansicht, Wischen, Tastatur */
+const bb=$('bigbox');
+bb.onmousemove=e=>{if(matchMedia('(hover:none)').matches||e.target.closest('.arr'))return;const r=bb.getBoundingClientRect();$('big').style.transformOrigin=((e.clientX-r.left)/r.width*100)+'% '+((e.clientY-r.top)/r.height*100)+'%';bb.classList.add('zoom')};
+bb.onmouseleave=()=>bb.classList.remove('zoom');
+$('prev').onclick=e=>{e.stopPropagation();go(-1)};$('next').onclick=e=>{e.stopPropagation();go(1)};
+function lbShow(){$('lbimg').src=gallery()[gi];$('lbt').textContent=CAP[gi]+' · '+(gi+1)+' / '+gallery().length+' · '+NAME(st.farbe)}
+bb.onclick=()=>{bb.classList.remove('zoom');lbShow();$('lb').classList.add('open')};
+$('lbx').onclick=()=>$('lb').classList.remove('open');
+$('lb').onclick=e=>{if(e.target.id==='lb')$('lb').classList.remove('open')};
+$('lbp').onclick=()=>go(-1);$('lbn').onclick=()=>go(1);
+document.addEventListener('keydown',e=>{if(e.key==='ArrowLeft')go(-1);else if(e.key==='ArrowRight')go(1);else if(e.key==='Escape'){$('lb').classList.remove('open');$('cartpanel').classList.remove('open')}});
+let tx=null;[bb,$('lb')].forEach(el=>{el.addEventListener('touchstart',e=>{tx=e.touches[0].clientX},{passive:true});el.addEventListener('touchend',e=>{if(tx===null)return;const d=e.changedTouches[0].clientX-tx;if(Math.abs(d)>40){go(d<0?1:-1);e.preventDefault()}tx=null})});
+/* Menge, Einkaufswagen */
+$('qty').onchange=render;
+function drawCart(){const n=cart.reduce((a,c)=>a+c.q,0),sum=cart.reduce((a,c)=>a+c.q*PR[c.gr][c.pk],0);
+  $('ccount').textContent=n;$('csum').textContent=eur(sum);
+  $('citems').innerHTML=cart.length?cart.map((c,i)=>`<div class="ci"><img src="img/listing/main-${c.farbe}.webp" alt=""><div>${NAME(c.farbe)}, ${c.gr}<br><span class="note">${pkName(c.pk)} · Menge ${c.q}</span></div><div>${eur(c.q*PR[c.gr][c.pk])}<br><button data-i="${i}">Löschen</button></div></div>`).join(''):'<p class="note" style="padding:8px 0">Der Einkaufswagen ist leer.</p>';
+  document.querySelectorAll('#citems button').forEach(b=>b.onclick=e=>{e.stopPropagation();cart.splice(+b.dataset.i,1);drawCart()})}
+$('cart').onclick=()=>{const q=+$('qty').value,f=cart.find(c=>c.farbe===st.farbe&&c.gr===st.gr&&c.pk===st.pk);if(f)f.q+=q;else cart.push({farbe:st.farbe,gr:st.gr,pk:st.pk,q});
+  drawCart();const b=$('cartbtn');b.classList.remove('pop');void b.offsetWidth;b.classList.add('pop');toast(`In den Einkaufswagen gelegt: ${q} × ${NAME(st.farbe)}, ${st.gr}, ${st.pk===1?'1 Stück':st.pk+' Stück'} (Vorschau)`)};
+$('buy').onclick=()=>toast('Vorschau – hier ist kein Kauf möglich.');
+$('wish').onclick=()=>toast('Auf die Wunschliste gesetzt (nur Vorschau). Echte Wunschzettel gibt es auf der Christbaumpoller-Seite.');
+$('cartbtn').onclick=e=>{e.stopPropagation();$('cartpanel').classList.toggle('open')};
+$('cpx').onclick=()=>$('cartpanel').classList.remove('open');
+$('cclear').onclick=e=>{e.stopPropagation();cart.length=0;drawCart()};
+document.addEventListener('click',e=>{if(!e.target.closest('#cartpanel')&&!e.target.closest('#cartbtn'))$('cartpanel').classList.remove('open')});
+render();drawCart();
+</script>
+</body>
+</html>
