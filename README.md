@@ -1,6 +1,6 @@
 # Christbaumpoller · Noppenblock
 
-> Variante mit 2 × 4 quadratischen Noppen oben, passenden Mulden unten (stapelbar, nicht klemmend), Ösenloch unten und Staplertaschen im echten Verhältnis. Die glatte Variante: https://macbookpro1703.github.io/christbaumpoller-01/
+> Variante mit 2 × 4 quadratischen Noppen oben, passenden Mulden unten (stapelbar, nicht klemmend), Ösenloch unten und Staplertaschen im echten Verhältnis. Die glatte Variante: https://macbookpro1703.github.io/christbaumpoller-02/
 
 **Ein Stück Sicherheitsgefühl für zu Hause.**
 Der Weihnachtsbaum-Anhänger in Form des Weihnachtsmarkt-Sperrblocks, mit Noppen und Mulden zum Stapeln, zwei Staplertaschen und Pinselschriftzug `#wirschaffendas`.
@@ -8,7 +8,7 @@ Gold · Silber · Rot – glänzend oder matt – mit oder ohne Schnee – S, M,
 
 Eine Idee von **Ebbing Project**.
 
-- Seite: https://macbookpro1703.github.io/christbaumpoller-noppen-01/
+- Seite: https://macbookpro1703.github.io/christbaumpoller-noppen-02/
 - Produkt- und Vertriebskonzept: [KONZEPT.md](KONZEPT.md)
 - Spots: `clips/` (Web-Fassung) · Quellskripte zum Neu-Rendern: `quelle/`
 
